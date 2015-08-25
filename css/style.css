@@ -4,9 +4,27 @@ html, body {
 	margin: 0 auto;	
 }
 
-.title {
+.heading {
 	text-align: center;
 	font-size: 4em;
 	font-weight: 100;
 	margin-bottom: 1%;
+}
+
+.subheading {
+	font-size: 2em;
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+
+.subheading-content {
+	
+}
+
+.main-container {
+	width: 75%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	margin-left: auto;
+	margin-right: auto;
 }
