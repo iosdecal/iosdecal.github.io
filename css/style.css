@@ -1,3 +1,24 @@
+@media screen and (max-width: 600px)  {
+
+}
+
+@media screen and (min-width: 600px) {
+
+	.column {
+		width: 33%;
+		float: left;
+	}
+
+	.column.left {
+		border-right: solid 1px #839496;
+	}
+
+	.column.middle {
+		border-right: solid 1px #839496;
+	}
+	
+}
+
 html, body {
 	font-family: "Open Sans", sans-serif;
 	font-weight: 300;
@@ -28,19 +49,6 @@ a:hover {
 
 .subheading-content {
 	
-}
-
-.column {
-	width: 33%;
-	float: left;
-}
-
-.column.left {
-	border-right: solid 1px #839496;
-}
-
-.column.middle {
-	border-right: solid 1px #839496;
 }
 
 .column-title {
