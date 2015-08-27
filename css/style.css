@@ -22,7 +22,7 @@
 	}
 	
 	.column-title {
-		font-size: 1em;
+		font-size: 0.9em;
 		text-align: center;
 		vertical-align: center;
 		padding: 20px 0px 20px 0px;
@@ -31,7 +31,7 @@
 	}
 
 	.column-item {
-		font-size: 0.85em;
+		font-size: 0.75em;
 		color: #002b36;
 		padding: 10px 0px 10px 0px;
 		text-align: center;
