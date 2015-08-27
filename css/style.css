@@ -1,4 +1,4 @@
-@media screen and (max-width: 715px)  {
+@media screen and (max-width: 600px)  {
 
 	#title {
 		font-size: 4em;
@@ -22,7 +22,7 @@
 	}
 	
 	.column-title {
-		font-size: 0.9em;
+		font-size: 1em;
 		text-align: center;
 		vertical-align: center;
 		padding: 20px 0px 20px 0px;
@@ -31,7 +31,7 @@
 	}
 
 	.column-item {
-		font-size: 0.75em;
+		font-size: 0.85em;
 		color: #002b36;
 		padding: 10px 0px 10px 0px;
 		text-align: center;
@@ -49,7 +49,7 @@
 
 }
 
-@media screen and (min-width: 715px) {
+@media screen and (min-width: 600px) {
 
 	#title {
 		font-size: 5em;
