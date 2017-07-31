@@ -57,20 +57,12 @@
     }
 
     .main-container {
-        width: 90%;
+        width: 80%;
         margin-top: 5%;
         margin-bottom: 5%;
         margin-left: auto;
         margin-right: auto;
     }
-    .person-container {
-        width: 20%;
-        margin-top: 3%;
-        margin-bottom:3%;
-        margin-left: auto;
-        margin-right: auto;
-    }  
-   
 }
 
 @media screen and (min-width: 600px) {
@@ -203,27 +195,6 @@ td {
 
 }
 */
-
-.column {
-    width: 33%;
-    float: left;
-    margin-bottom: 1%;
-}
-
-.column.left {
-    border-right: solid 1px #839496;
-}
-
-.column.middle {
-    border-right: solid 1px #839496;
-}
-
-.column-items {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin-bottom: 5%;
-}
 
 .staff {
     width: 200px;
