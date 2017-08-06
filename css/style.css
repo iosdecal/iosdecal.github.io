@@ -1,4 +1,4 @@
-@media screen and (max-width: 600px)  {
+@media screen and (max-width: 600px) {
     #title {
         font-size: 4em;
     }
@@ -23,7 +23,7 @@
         font-size: 1.25em;
         margin-top: 3%;
         margin-bottom: 1%;
-        font-weight: 800; 
+        font-weight: 800;
     }
 
     .menu-subheading {
@@ -37,7 +37,7 @@
         margin-top: 3%;
         margin-bottom: 1%;
     }
-    
+
     .column-title {
         font-size: 1em;
         text-align: center;
@@ -49,7 +49,7 @@
 
     .column-item {
         font-size: 0.85em;
-        color: #002b36;
+        color: gray;
         padding: 10px 0px 10px 0px;
         text-align: center;
         height: 50px;
@@ -91,16 +91,16 @@
         font-size: 1.5em;
         margin-top: 3%;
         margin-bottom: 1%;
-        font-weight: 800; 
+        font-weight: 800;
     }
     .menu-subheading {
         font-size: 1.1em;
         margin-top: 3%;
         margin-bottom: 1%;
     }
-    .staff-subheading{
-        font-size: 1.1em; 
-        margin-bottom:1%;
+    .staff-subheading {
+        font-size: 1.1em;
+        margin-bottom: 1%;
     }
     .column-title {
         font-size: 1.5em;
@@ -128,15 +128,22 @@
     }
 }
 
-html, body {
+html,
+body {
     font-family: "Open Sans", sans-serif;
     font-weight: 300;
-    margin: 0 auto; 
-    color: #262626;
+    font-size: 12pt;
+    margin: 0 auto;
+    color: #202020;
+}
+
+h3 {
+    font-weight: bold;
+    padding-bottom: 10px;
 }
 
 hr {
-    width:75%;
+    width: 75%;
 }
 
 a {
@@ -149,70 +156,34 @@ a:hover {
 }
 
 table {
-    /*border-collapse: collapse;*/
-    width:100%;
-    border-radius: 5px; 
-  border: 1px solid black;
+    width: 100%;
 }
 
-table, th, td {
-    border: 1px solid black;
+table,
+th,
+td {
+    border: 1px solid gray;
     height: 75px;
 }
+
 th {
     font-weight: bold;
-    text-align: center; 
+    text-align: center;
 }
+
 td {
     text-align: center;
 }
 
-/*.syllabus-table-rounded {
-    border: none;
-}
-.syllabus-table-rounded thead th {
-    background-color: #CFAD70;
-    border:none;
-    color: #333;
-}
-.syllabus-table-rounded thead th:first-child {
-    border-radius: 10px 0 0 0;
-    border:1px solid black;
-}
-.syllabus-table-rounded thead th:last-child {
-    border-radius: 0 10px 0 0;
-        border:1px solid black;
-
-}
-.syllabu-table-rounded tbody tr:last-child td:first-child {
-    border-radius: 0 0 0 10px;
-        border:1px solid black;
-
-}
-.syllabu-table-rounded tbody tr:last-child td:last-child {
-    border-radius: 0 0 10px 0;
-        border:1px solid black;
-
-}
-*/
-
-.staff {
-    width: 200px;
-    height: 250px;
-    margin-bottom: 2%;
-}
-
-.staff img {
-    width: 200px;
-    height: 200px;
-    margin-bottom:1%;
-    display: inline-block;
-}
-
-.container p {
-    margin-top:1%;
+.container {
+    margin-top: 1%;
     text-align: center;
     font-size: 13px;
+}
+
+.staff-container {
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 #title-container {
@@ -227,10 +198,34 @@ td {
 #menu {
     text-align: center;
 }
+
 #picture {
     width: 100px;
     height: 100px;
 }
+
 #name {
     text-align: center;
+}
+
+div.staff-grid {
+    margin: 8px;
+    float: left;
+    width: 180px;
+}
+
+div.staff-grid :hover {}
+
+div.staff-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+div.description {
+    padding: 10px;
+
+    text-align: center;
+    font-weight: medium;
+    font-size: 11pt;
 }
