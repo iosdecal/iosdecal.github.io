@@ -132,15 +132,24 @@ html,
 body {
     font-family: "Open Sans", sans-serif;
     font-weight: 300;
-    font-size: 12pt;
+    font-size: 11pt;
     margin: 0 auto;
     color: #202020;
 }
 
+
+h2 {
+    font-size: 18pt;
+    font-weight: bold;
+    padding-top: 15px;
+}
+
 h3 {
     font-weight: bold;
-    padding-bottom: 10px;
+    font-size: 13pt;
 }
+
+
 
 hr {
     width: 75%;
