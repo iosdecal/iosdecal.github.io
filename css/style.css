@@ -2,7 +2,7 @@
     #title {
         font-size: 4em;
     }
-
+    
     #subtitle {
         font-size: 2em;
         text-align: center;
@@ -137,19 +137,17 @@ body {
     color: #202020;
 }
 
-
 h2 {
     font-size: 18pt;
-    font-weight: bold;
+    border-bottom: 1px solid gray;
     padding-top: 15px;
 }
 
 h3 {
     font-weight: bold;
     font-size: 13pt;
+    padding-top: 0px;
 }
-
-
 
 hr {
     width: 75%;
@@ -233,7 +231,6 @@ div.staff-grid img {
 
 div.description {
     padding: 10px;
-
     text-align: center;
     font-weight: medium;
     font-size: 11pt;
