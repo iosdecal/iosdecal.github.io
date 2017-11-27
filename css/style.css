@@ -218,22 +218,22 @@ td {
 }
 
 div.staff-grid {
-    margin: 8px;
-    float: left;
-    width: 180px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    float: left;    
 }
 
 div.staff-grid :hover {}
 
 div.staff-grid img {
-    width: 100%;
-    height: auto;
+    height: 150px;
+    width: 150px;
     border-radius: 10px;
 }
 
 div.description {
-    padding: 10px;
+    /* description for staff names */
+    /* dont add any padding here */
     text-align: center;
-    font-weight: medium;
-    font-size: 11pt;
+    font-size: 10pt;
 }
