@@ -237,3 +237,11 @@ div.description {
     text-align: center;
     font-size: 10pt;
 }
+
+#dan-from-the-future:before {
+  content: "2001";
+}
+
+#dan-from-the-future:hover:before {
+  content: "2501 👽";
+}
