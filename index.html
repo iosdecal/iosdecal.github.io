@@ -1,261 +1,279 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
-
 <head>
-    <title>iOS DeCal</title>
-    <meta http-equiv="Content-Type" content="text/html" ; charset="UTF-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="js/script.js"></script>
-    <meta name="viewport" content="widtd=device-widtd, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Muli:400,700,900i" rel="stylesheet">
-    <!-- Favicon linking  -->
-    <link rel="shortcut icon" href="/favicons/favicon.ico">
-    <link rel="icon" sizes="16x16 32x32 64x64" href="/favicons/favicon.ico">
-    <link rel="icon" type="image/png" sizes="196x196" href="/favicons/favicon-192.png">
-    <link rel="icon" type="image/png" sizes="160x160" href="/favicons/favicon-160.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96.png">
-    <link rel="icon" type="image/png" sizes="64x64" href="/favicons/favicon-64.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16.png">
-    <link rel="apple-touch-icon" href="/favicons/favicon-57.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/favicons/favicon-114.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/favicons/favicon-72.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/favicons/favicon-144.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/favicons/favicon-60.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/favicons/favicon-120.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/favicons/favicon-76.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/favicons/favicon-152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/favicon-180.png">
-    <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-TileImage" content="/favicons/favicon-144.png">
-    <meta name="msapplication-config" content="/browserconfig.xml">
-    <!-- Preview Image (shows up in Facebook Posts) -->
-    <!-- TODO: update this for new semester  -->
-    <meta property="og:image" content="http://iosdecal.com/iosdecal_fall2017.jpg" />
-    <meta property="og:title" content="iOS DeCal" />
-    <meta property="og:url" content="iosdecal.com" />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content="Fall 2017 applications due August 29th!" />
+<title>iOS DeCal</title>
+<meta http-equiv="Content-Type" content="text/html" ; charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/script.js"></script>
+<meta name="viewport" content="widtd=device-widtd, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Muli:400,700,900i" rel="stylesheet">
+<!-- Favicon linking  -->
+<link rel="shortcut icon" href="/favicons/favicon.ico">
+<link rel="icon" sizes="16x16 32x32 64x64" href="/favicons/favicon.ico">
+<link rel="icon" type="image/png" sizes="196x196" href="/favicons/favicon-192.png">
+<link rel="icon" type="image/png" sizes="160x160" href="/favicons/favicon-160.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/favicons/favicon-64.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16.png">
+<link rel="apple-touch-icon" href="/favicons/favicon-57.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/favicons/favicon-114.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/favicons/favicon-72.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/favicons/favicon-144.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/favicons/favicon-60.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/favicons/favicon-120.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/favicons/favicon-76.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/favicons/favicon-152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/favicon-180.png">
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="/favicons/favicon-144.png">
+<meta name="msapplication-config" content="/browserconfig.xml">
+<!-- Preview Image (shows up in Facebook Posts) -->
+<!-- TODO: update this for new semester  -->
+<meta property="og:image" content="http://iosdecal.com/iosdecal_fall2017.jpg"/>
+<meta property="og:title" content="iOS DeCal"/>
+<meta property="og:url" content="iosdecal.com"/>
+<meta property="og:type" content="website"/>
+<meta property="og:description" content="Spring 2018 | Info Session January 18th!"/>
+<!--
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Component', 'Percentage of grade'],
+          ['Projects',		30],
+          ['Assignments',	35],
+          ['Custom App',  35]
+        ]);
+
+        var options = {
+			title: 'Grading Breakdown',
+			legend: 'none',
+          	pieSliceText: 'label',
+			slices: {  0: {offset: 0.01},
+                    1: {offset: 0.01},
+                    2: {offset: 0.01},
+					},
+			tooltip: {text: 'percentage'},
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+-->
 </head>
 <body>
-    <div id="title-container" class="main-container">
-        <div id="title" class="heading">
-            <img src="other_files/Logo.jpg" alt="iOS DeCal" style="widtd:150px;height:150px;">
-        </div>
-        <div id="class-number" class="subheading">
-          <h1>cs 198-001 : fall 2017</h1>
-          <!-- <h1><a href ="https://goo.gl/forms/zY0EEbX2kcwg8I7F3"> check in </a><h1> -->
-          </div>
-          <div id="menu" class="menu-subheading menu-container">
-            <a href=#syllabus>syllabus</a> &emsp;
-            <a href=#staff>staff</a> &emsp;
-            <a href="https://piazza.com/berkeley/fall2017/cs198001/home">piazza</a> &emsp;
-            <a href=#about>about</a> &emsp;
-        </div>
-        <br>
-        <hr></hr>
-    </div>
-    <div id="overview-container" class="main-container">
-        <div id="Announcements" class="row">
+<div id="title-container" class="main-container">
+  <div id="title" class="heading"> <img src="other_files/Logo.jpg" alt="iOS DeCal" style="widtd:150px;height:150px;"> </div>
+  <div id="class-number" class="subheading">
+    <h1>cs 198-1 : spring 2018</h1>
+    <!-- <h1><a href ="https://goo.gl/forms/zY0EEbX2kcwg8I7F3"> check in </a><h1> --> 
+  </div>
+  <div id="menu" class="menu-subheading menu-container"> <a href="#syllabus">syllabus</a> &emsp; <a href="#staff">staff</a> &emsp; <a href="https://piazza.com/berkeley/fall2017/cs198001/home">piazza</a> &emsp; <a href="#about">about</a> &emsp; </div>
+  <br>
+  <hr></hr>
+</div>
+<div id="overview-container" class="main-container"> 
+  <!--
+        <div id="announcements" class="row">
             <h2>Announcements</h2>
             <ul style="list-style-type:disc">
                 <li>Please fill out our anonymous<a href="https://goo.gl/forms/3jCOssN57hmjD3r53"> course feedback form</a></li>
-                <li><a href="https://goo.gl/forms/DFg0rm5wwd04kb8B2">Spring 2018 TA applications</a></li>
             </ul>
         </div>
-        <div id="syllabus" class="row">
-            <h2> Syllabus</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Week</th>
-                        <th>Lecture (Mon)</th>
-                        <th>Lab (Wed)</th>
-                        <th>Assignments</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Wednesday, 9/6</td>
-                        <td><font color="red">No class (academic holiday)</font></td>
-                        <td><a href="lectures/lecture0-intro-swift.pdf">Logistics and Intro to Swift</a></td>
-                        <td rowspan=2><a href="https://github.com/iosdecal/hw1">Swift Playground</a></td>
-                    </tr>
-                    <tr>
-                        <td>Mon 9/11 <br>Wed 9/13</td>
-                        <td><a href="lectures/lecture1-xcode-mvc.pdf">Xcode and MVC</a></td>
-                        <td><a href="https://github.com/iosdecal/ios-decal-lab1">Xcode Tutorial</a></td>
-                    </tr>
-                    <tr>
-                        <td>Mon 9/18 <br>Wed 9/20</td>
-                        <td><a href="lectures/lecture2-autolayot.pdf">AutoLayout</a></td>
-                        <td><a href="https://github.com/iosdecal/ios-decal-lab2">Drummer</a></td>
-                        <td rowspan=2><a href="https://github.com/iosdecal/hw2">Hangman</a></td>
-                    </tr>
-                    <tr>
-                        <td>Mon 9/25 <br>Wed 9/27</td>
-                        <td><a href="lectures/lecture3-multiview-applications.pdf">Multiview Applications</a></td>
-                        <td><a href="https://github.com/iosdecal/ios-decal-lab3-fall17">Snapchat Clone Navigation</a></td>
-                    </tr>
-                    <tr>
-                        <td>Mon 10/2 <br>Wed 10/4</td>
-                        <td><a href="lectures/lecture4-table-and-collection-views.pdf">Table Views and Collection Views</a></td>
-                        <td><a href="https://github.com/iosdecal/ios-decal-lab4">Pokedex</a></td>
-                        <td rowspan=3><a href="https://github.com/iosdecal/ios-decal-hw3-part1">Snapchat Clone Part 1</a></td>
-                    </tr>
-                    <tr>
-                        <td>Mon 10/9 <br>Wed 10/11</td>
-                        <td><a href="lectures/lecture5-networking.pdf">Networking, Cocoapods, Alamofire</a></td>
-                        <td>Project work day</td>
-                    </tr>
-                    <tr>
-                        <td>Mon 10/16 <br>Wed 10/18</td>
-                        <td><a href="lectures/lecture6-firebase.pdf">Firebase</a></td>
-                        <td>Snapchat Firebase Setup</td>
-                    </tr>
-                    <tr>
-                        <td>Mon 10/23 <br>Wed 10/25</td>
-                        <td><a href="lectures/lecture7-data-persistence.pdf">Data Persistance</a></td>
-                        <td>Custom App Proposal Review</td>
-                        <td rowspan=3><a href="https://github.com/iosdecal/hw3-part2">Snapchat Clone Part 2</a></td>
-                    </tr>
-                    <tr>
-                        <td>Mon 10/30 <br>Wed 11/1</td>
-                        <td>No class</td>
-                        <td><a href="lectures/lecture8-midsemester-review.pdf">Mid-Semester Review</a></td>
-                        
-                    </tr>
-                    <tr>
-                        <td>Mon 11/6 <br>Wed 11/8</td>
-                        <td><a href="lectures/lecture9-avfoundation.pdf">AVFoundation, Location, Mapkit</a></td>
-                        <td><a href="https://github.com/iosdecal/ios-decal-AV-lab">Snapchat Camera</a></td>
-                    </tr>
-                    <tr>
-                        <td>Mon 11/13 <br>Wed 11/15</td>
-                        <td><a href="lectures/lecture10-ui-ux-programmatic-design.pdf">UI/UX and Programmatic Design</a></td>
-                        <td><a href="http://iosdecal.com/fall-2017-slides/lab6.pdf">Custom App Check In and Objective-C</a></td>
-                        <td rowspan="4"><a href="http://iosdecal.com/other_files/final_app_spec.pdf">Custom App</a></td>
-                    </tr>
-                    <tr>
-                        <td>Mon 11/20 <br>Wed 11/22</td>
-                        <td><a href="lectures/lecture11-advanced-swift.pdf">Advanced Swift</a></td>
-                        <td><font color="red">No lab</font></td>
-                    </tr>
-                    <tr>
-                        <td>Mon 11/27 <br>Wed 11/29</td>
-                        <td><a href="lectures/lecture12-arkit-coreml.pdf">ARKit and Core ML</a></td>
-                        <td>Custom App Check In 2</td>
-                    </tr>
-                    <tr>
-                        <td>Wed 12/6 <br>Fri 12/8</td>
-                        <td><a href="http://iosdecal.com/other_files/final_app_spec.pdf">Custom app</a> due Wed 12/6 at noon</td>
-                        <td>Final Presentation <br><b>Attendance required</b></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div id="staff" class="row">
-            <div class="subheading">
-                <h2>Course Staff</h2>
-            </div>
-            <h3>Facilitators</h3>
-            <div class="staff-container">
-                <div class="row">
-                    <div class="staff-grid ">
-                        <img src="staff-photos/paige_plander.jpg" alt="Paige">
-                        <div class="description"><a href="http://paigeplander.com">Paige Plander</a></div>
-                    </div>
-                    <div class="staff-grid ">
-                        <img src="staff-photos/chris_zielinski.jpg" alt="Chris">
-                        <div class="description">Chris Zielinski</div>
-                    </div>
-                </div>
-            </div>
-            <div class="staff-subheading">
-                <h3>Teaching Assistants</h3>
-                <div class="staff-container">
-                    <div class="row">
-                        <div class="staff-grid ">
-                            <img src="staff-photos/nithi_narayanan.jpg" alt="Nithi Narayanan">
-                            <div class="description">Nithi Narayanan</div>
-                        </div>
-                        <div class="staff-grid ">
-                            <img src="staff-photos/jim_bai.jpg" alt="Jim Bai">
-                            <div class="description">Jim Bai</div>
-                        </div>
-                        <div class="staff-grid ">
-                            <img src="staff-photos/sarah_chin.jpg" alt="Sarah Chin">
-                            <div class="description">Sarah Chin</div>
-                        </div>
-                        <div class="staff-grid ">
-                            <img src="staff-photos/jack_connolly.jpg" alt="Sarah Chin">
-                            <div class="description">Jack Connolly</div>
-                        </div>
-                        <div class="staff-grid ">
-                            <img src="staff-photos/aspen_hsu.jpg" alt="Aspen Hsu">
-                            <div class="description">Aspen Hsu</div>
-                        </div>
-                        <div class="staff-grid ">
-                            <img src="staff-photos/victor_korir.jpg" alt="Victor Korir">
-                            <div class="description"><a href="http://victorkorir.com/">Victor Korir</a></div>
-                        </div>
-                        <div class="staff-grid ">
-                            <img src="staff-photos/daniel_phiri.jpg" alt="Daniel Phiri">
-                            <div class="description">Daniel Phiri</div>
-                        </div>
-                        <div class="staff-grid ">
-                            <img src="staff-photos/gokul_swamy.jpg" alt="Gokul Swamy">
-                            <div class="description"><a href="http://gokulswamy.me/">Gokul Swamy</a></div>
-                        </div>
-                        <div class="staff-grid ">
-                            <img src="staff-photos/marisa_wong.jpg" alt="Marisa Wong">
-                            <div class="description">Marisa Wong</div>
-                        </div>
-                        <div class="staff-grid ">
-                            <img src="staff-photos/alex_yang.jpg" alt="Alex Yang">
-                            <div class="description">Alex Yang</div>
-                        </div>
-                        <div class="staff-grid ">
-                            <img src="staff-photos/jianglai_zhang.jpg" alt="Jianglai Zhang">
-                            <div class="description">Teddy Zhang</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End staff (total) -->
-        <!-- About -->
-        <div id="about" class="row">
-            <h2>About</h2>
-            <h3>Time / Location</h3>
-            Each week, we will have one lecture and one assignment, with attendance being required for both. assignments will be split up into three sections, which will be assigned on the first day of class. 
-            <br />
-            <b>Lecture:</b> Mondays, 6:30-8:00pm in HP Auditorium 
-            <br />
-            <b>Lab:</b> Wednesdays, 7:00-8:30pm in 310 Soda, 320 Soda, and 210 Wheeler
-            
-            <h3>Course Description</h3>
-            The iOS DeCal was started by Professor Dan Garcia (now our Faculty Advisor) in <span id="dan-from-the-future"></span> as MS-DOS X, a student-run Objective-C course for OS X (and later iOS) development. Rebooted in the Fall 2015 semester, the renamed iOS DeCal now operates with the latest devices (e.g. iPhone, iPad, Apple Watch, Apple TV). By the end of the semester, students will have created a variety of apps, including one entirely of their own design.
-        </div>
-        <div id="grading" class="row">
-            <h2>Grading</h2>
-            30% Projects
-            <br /> 35% assignments
-            <br /> 35% Final Project
-            <br /> 
-            <br /> We allow 3 slip days for homework assignments (including hw1 and hw2). You may not use slip days for any custom app related assignment.
-            <br /> Attendance to both lectures and assignments is based on a pass/fail policy. If you have more than 3 unexcused absences, you will not pass the course.
-        </div>
-        <div id="info" class="row">
-            <h2>Prerequisites / Requirements</h2>
-            <b>Courses: </b>CS 61A and CS 61B, or equivalent courses (We will be assuming that students are familiar with Object Oriented Programming)
-            <br />
-            <br />
-            <b>Hardware: </b>A Macbook running OS X Sierra 10.12.4 or later
-            <br />
-            <br />
-        </div>
+-->
+  <div id="how-to-apply" class="row">
+    <h2>How to Apply</h2>
+    You must attend our mandatory info session on Thursday, January 18th in Wozniak Lounge (430-8 Soda) from 8-9pm. <em>The application will be released at this info session.</em> </div>
+  <div id="syllabus" class="row">
+    <h2>Syllabus (Fall 2017)</h2>
+    <table>
+            <thead>
+                <tr>
+                    <th>Week</th>
+                    <th>Lecture (Mon)</th>
+                    <th>Lab (Wed)</th>
+                    <th>Assignments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Wednesday, 9/6</td>
+                    <td><font color="red">No class (academic holiday)</font></td>
+                    <td>Intro / Overview of Xcode</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Mon 9/11 <br>Wed 9/13</td>
+                    <td>Swift Language</td>
+                    <td><a href="https://gitdub.com/iosdecal/ios-decal-lab1">Xcode Tutorial</a></td>
+                    <td>Swift Playground due</td>
+                </tr>
+                <tr>
+                    <td>Mon 9/18 <br>Wed 9/20</td>
+                    <td><a href="http://iosdecal.com/Lectures/Lecture2.pdf">MVC and AutoLayout</a></td>
+                    <td><a href="https://github.com/iosdecal/ios-decal-lab3">Stopwatch</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Mon 9/25 <br>Wed 9/27</td>
+                    <td><a href="http://iosdecal.com/Lectures/Lecture3.pdf">Multiview Applications</a></td>
+                    <td>Snapchat Clone Navigation</td>
+                    <td>Swift Calculator due</td>
+                </tr>
+                <tr>
+                    <td>Mon 10/2 <br>Wed 10/4</td>
+                    <td><a href="http://iosdecal.com/Lectures/Lecture4.pdf">Table Views and Collection Views</a></td>
+                    <td><a href="https://gitdub.com/iosdecal/ios-decal-lab4">Pokedex</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Mon 10/9 <br>Wed 10/11</td>
+                    <td><a href="http://iosdecal.com/Lectures/Lecture6.pdf">Networking, Cocoapods, Alamofire</a></td>
+                    <td>Custom App Work Day</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Mon 10/16 <br>Wed 10/18</td>
+                    <td><a href="http://iosdecal.com/Lectures/Lecture7.pdf">Firebase</a></td>
+                    <td>Snapchat Firebase Setup</td>
+                    <td>Snapchat Clone Part 1 due</td>
+                </tr>
+                <tr>
+                    <td>Mon 10/23 <br>Wed 10/25</td>
+                    <td>Mid-Semester Review</td>
+                    <td>API Lab Part 1</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Mon 10/30 <br>Wed 11/1</td>
+                    <td>Data Persistance</td>
+                    <td>API Lab Part 2</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Mon 11/6 <br>Wed 11/8</td>
+                    <td>AVFoundation, Location, Mapkit</td>
+                    <td>Snapchat Camera</td>
+                    <td>Snapchat Clone Part 2 due</td>
+                </tr>
+                <tr>
+                    <td>Mon 11/13 <br>Wed 11/15</td>
+                    <td><a href="http://iosdecal.com/Lectures/Lecture10.pdf">Objective C</a></td>
+                    <td><a href="https://gitdub.com/iosdecal/ios-decal-lab7">Objective-C</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Mon 11/20 <br>Wed 11/22</td>
+                    <td><a href="http://iosdecal.com/Lectures/Lecture8.pdf">UI/UX and Programmatic Design</a></td>
+                    <td><font color="red">No lab</font></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Mon 11/27 <br>Wed 11/29</td>
+                    <td>ARKit and Core ML</td>
+                    <td>Project Work Day</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Mon 12/4 <br>Wed 12/6</td>
+                    <td>RRR Week</td>
+                    <td>Final Presentation <br><b>Attendance required</b></td>
+                    <td>Custom App due</td>
+                </tr>
+            </tbody>
+        </table>
+  </div>
+  <div id="staff" class="row">
+    <div class="subheading">
+      <h2>Course Staff</h2>
     </div>
+    <h3>Facilitators</h3>
+    <div class="staff-container">
+      <div class="row">
+        <div class="staff-grid "> <img src="staff-photos/nithi_narayanan.jpg" alt="Nithi Narayanan">
+          <div class="description">Nithi Narayanan</div>
+        </div>
+        <div class="staff-grid "> <img src="staff-photos/daniel_phiri.jpg" alt="Daniel Phiri">
+          <div class="description">Daniel Phiri</div>
+        </div>
+        <div class="staff-grid "> <img src="staff-photos/chris_zielinski.jpg" alt="Chris Zielinski">
+          <div class="description">Chris Zielinski</div>
+        </div>
+      </div>
+    </div>
+    <div class="staff-subheading">
+      <h3>Teaching Assistants</h3>
+      <div class="staff-container">
+        <div class="row">
+          <div class="staff-grid "> <img src="staff-photos/jim_bai.jpg" alt="Jim Bai">
+            <div class="description">Jim Bai</div>
+          </div>
+          <div class="staff-grid "> <img src="staff-photos/sarah_chin.jpg" alt="Sarah Chin">
+            <div class="description">Sarah Chin</div>
+          </div>
+          <div class="staff-grid "> <img src="staff-photos/jack_connolly.jpg" alt="Sarah Chin">
+            <div class="description">Jack Connolly</div>
+          </div>
+          <div class="staff-grid "> <img src="staff-photos/aspen_hsu.jpg" alt="Aspen Hsu">
+            <div class="description">Aspen Hsu</div>
+          </div>
+          <div class="staff-grid "> <img src="staff-photos/victor_korir.jpg" alt="Victor Korir">
+            <div class="description"><a href="http://victorkorir.com/">Victor Korir</a></div>
+          </div>
+          <div class="staff-grid "> <img src="staff-photos/gokul_swamy.jpg" alt="Gokul Swamy">
+            <div class="description"><a href="http://gokulswamy.me/">Gokul Swamy</a></div>
+          </div>
+          <div class="staff-grid "> <img src="staff-photos/marisa_wong.jpg" alt="Marisa Wong">
+            <div class="description">Marisa Wong</div>
+          </div>
+          <div class="staff-grid "> <img src="staff-photos/alex_yang.jpg" alt="Alex Yang">
+            <div class="description">Alex Yang</div>
+          </div>
+          <div class="staff-grid "> <img src="staff-photos/jianglai_zhang.jpg" alt="Jianglai Zhang">
+            <div class="description">Teddy Zhang</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End staff (total) --> 
+  <!-- About -->
+  <div id="about" class="row">
+    <h2>About</h2>
+    <h3>Time/ Location</h3>
+    Each week, we will have one lecture and one lab, with attendance being required for both. Labs will be split up into two sections, which will be assigned on the first day of class. <br>
+    <ul style="list-style-type:disc">
+      <li><strong>Lecture:</strong> Mondays, 6:30-8pm in <a href="http://www.berkeley.edu/map?leconte" target="_blank">3 LeConte</a></li>
+      <li><strong>Lab:</strong> Wednesdays, 6:30-8pm in <a href="http://www.berkeley.edu/map?barrows" target="_blank">166 &amp; 170 Barrows</a></li>
+    </ul>
+    <h3>Course Description</h3>
+    The iOS DeCal was started by Professor Dan Garcia (now our Faculty Advisor) in as MS-DOS X, a student-run Objective-C course for OS X (and later iOS) development. Rebooted in the Fall 2015 semester, the renamed iOS DeCal now operates with the latest devices (e.g. iPhone, iPad, Apple Watch, Apple TV). By the end of the semester, students will have created a variety of apps, including one entirely of their own design. </div>
+  <div id="grading" class="row">
+    <h2>Grading</h2>
+    30% Projects <br/>
+    35% Assignments <br/>
+    35% Custom App <br/>
+    <br/>
+    <ul style="list-style-type:disc">
+      <li>We allow 3 slip days for homework assignments (including hw1 and hw2). You may not use slip days for any custom app related assignment. </li>
+      <li>Attendance to both lectures and labs is based on a pass/fail policy. If you have more than 3 unexcused absences, you will not pass the course.</li>
+    </ul>
+  </div>
+  <div id="info" class="row">
+    <h2>Prerequisites/ Requirements</h2>
+    <ul style="list-style-type:disc">
+      <li><b>Courses: </b>CS 61A and CS 61B, or equivalent courses (we will be assuming that students are familiar with object-oriented programming)</li>
+      <li><b>Hardware: </b>MacBook running macOS 10.12.6 or later</li>
+    </ul>
+  </div>
+</div>
 </body>
 </html>
