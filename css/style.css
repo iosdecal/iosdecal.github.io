@@ -217,6 +217,13 @@ td {
     text-align: center;
 }
 
+.disabled {
+  cursor: default;
+  pointer-events: none;
+  text-decoration: none;
+  color: black;
+}
+
 div.staff-grid {
     padding-right: 30px;
     padding-bottom: 20px;

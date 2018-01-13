@@ -36,38 +36,6 @@
 <meta property="og:url" content="iosdecal.com"/>
 <meta property="og:type" content="website"/>
 <meta property="og:description" content="Spring 2018 | Info Session January 18th!"/>
-<!--
-	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-
-        var data = google.visualization.arrayToDataTable([
-          ['Component', 'Percentage of grade'],
-          ['Projects',		30],
-          ['Assignments',	35],
-          ['Custom App',  35]
-        ]);
-
-        var options = {
-			title: 'Grading Breakdown',
-			legend: 'none',
-          	pieSliceText: 'label',
-			slices: {  0: {offset: 0.01},
-                    1: {offset: 0.01},
-                    2: {offset: 0.01},
-					},
-			tooltip: {text: 'percentage'},
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-        chart.draw(data, options);
-      }
-    </script>
--->
 </head>
 <body>
 <div id="title-container" class="main-container">
@@ -76,9 +44,10 @@
     <h1>cs 198-1 : spring 2018</h1>
     <!-- <h1><a href ="https://goo.gl/forms/zY0EEbX2kcwg8I7F3"> check in </a><h1> --> 
   </div>
-  <div id="menu" class="menu-subheading menu-container"> <a href="#syllabus">syllabus</a> &emsp; <a href="#staff">staff</a> &emsp; <a href="https://piazza.com/berkeley/fall2017/cs198001/home">piazza</a> &emsp; <a href="#about">about</a> &emsp; </div>
+  <div id="menu" class="menu-subheading menu-container"> <a href="#syllabus">syllabus</a> &emsp; <a href="#staff">staff</a> &emsp; <!--<a href="https://piazza.com/berkeley/fall2017/cs198001/home">piazza</a> &emsp;--> <a href="#about">about</a> &emsp; </div>
   <br>
-  <hr></hr>
+  <hr>
+  </hr>
 </div>
 <div id="overview-container" class="main-container"> 
   <!--
@@ -91,105 +60,110 @@
 -->
   <div id="how-to-apply" class="row">
     <h2>How to Apply</h2>
-    You must attend our mandatory info session on Thursday, January 18th in Wozniak Lounge (430-8 Soda) from 8-9pm. <em>The application will be released at this info session.</em> </div>
+    You must attend our mandatory info session on Thursday, January 18th in Wozniak Lounge (430-8 Soda) from 8-9pm. <b>The application will be released at this info session.</b> </div>
   <div id="syllabus" class="row">
     <h2>Syllabus (Fall 2017)</h2>
     <table>
-            <thead>
-                <tr>
-                    <th>Week</th>
-                    <th>Lecture (Mon)</th>
-                    <th>Lab (Wed)</th>
-                    <th>Assignments</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Wednesday, 9/6</td>
-                    <td><font color="red">No class (academic holiday)</font></td>
-                    <td>Intro / Overview of Xcode</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Mon 9/11 <br>Wed 9/13</td>
-                    <td>Swift Language</td>
-                    <td><a href="https://gitdub.com/iosdecal/ios-decal-lab1">Xcode Tutorial</a></td>
-                    <td>Swift Playground due</td>
-                </tr>
-                <tr>
-                    <td>Mon 9/18 <br>Wed 9/20</td>
-                    <td><a href="http://iosdecal.com/Lectures/Lecture2.pdf">MVC and AutoLayout</a></td>
-                    <td><a href="https://github.com/iosdecal/ios-decal-lab3">Stopwatch</a></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Mon 9/25 <br>Wed 9/27</td>
-                    <td><a href="http://iosdecal.com/Lectures/Lecture3.pdf">Multiview Applications</a></td>
-                    <td>Snapchat Clone Navigation</td>
-                    <td>Swift Calculator due</td>
-                </tr>
-                <tr>
-                    <td>Mon 10/2 <br>Wed 10/4</td>
-                    <td><a href="http://iosdecal.com/Lectures/Lecture4.pdf">Table Views and Collection Views</a></td>
-                    <td><a href="https://gitdub.com/iosdecal/ios-decal-lab4">Pokedex</a></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Mon 10/9 <br>Wed 10/11</td>
-                    <td><a href="http://iosdecal.com/Lectures/Lecture6.pdf">Networking, Cocoapods, Alamofire</a></td>
-                    <td>Custom App Work Day</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Mon 10/16 <br>Wed 10/18</td>
-                    <td><a href="http://iosdecal.com/Lectures/Lecture7.pdf">Firebase</a></td>
-                    <td>Snapchat Firebase Setup</td>
-                    <td>Snapchat Clone Part 1 due</td>
-                </tr>
-                <tr>
-                    <td>Mon 10/23 <br>Wed 10/25</td>
-                    <td>Mid-Semester Review</td>
-                    <td>API Lab Part 1</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Mon 10/30 <br>Wed 11/1</td>
-                    <td>Data Persistance</td>
-                    <td>API Lab Part 2</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Mon 11/6 <br>Wed 11/8</td>
-                    <td>AVFoundation, Location, Mapkit</td>
-                    <td>Snapchat Camera</td>
-                    <td>Snapchat Clone Part 2 due</td>
-                </tr>
-                <tr>
-                    <td>Mon 11/13 <br>Wed 11/15</td>
-                    <td><a href="http://iosdecal.com/Lectures/Lecture10.pdf">Objective C</a></td>
-                    <td><a href="https://gitdub.com/iosdecal/ios-decal-lab7">Objective-C</a></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Mon 11/20 <br>Wed 11/22</td>
-                    <td><a href="http://iosdecal.com/Lectures/Lecture8.pdf">UI/UX and Programmatic Design</a></td>
-                    <td><font color="red">No lab</font></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Mon 11/27 <br>Wed 11/29</td>
-                    <td>ARKit and Core ML</td>
-                    <td>Project Work Day</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Mon 12/4 <br>Wed 12/6</td>
-                    <td>RRR Week</td>
-                    <td>Final Presentation <br><b>Attendance required</b></td>
-                    <td>Custom App due</td>
-                </tr>
-            </tbody>
-        </table>
+      <thead>
+        <tr>
+          <th>Week</th>
+          <th>Lecture (Mon)</th>
+          <th>Lab (Wed)</th>
+          <th>Assignments</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>&emsp;Mon 1/29&emsp;<br>
+            Wed 1/31</td>
+          <td><a class="disabled" href="lectures/">Intro + Overview of Xcode</a></td>
+          <td><a class="disabled" href="">Swift</a></td>
+          <td rowspan="2"><a class="disabled" href="https://github.com/iosdecal/hw1">Swift Playground</a></td>
+        </tr>
+        <tr>
+          <td>Mon 2/5 <br>
+            Wed 2/7</td>
+          <td><a class="disabled" href="lectures/">Swift Language</a></td>
+          <td><a class="disabled" href="https://github.com/iosdecal/ios-decal-lab1">Xcode Tutorial</a></td>
+        </tr>
+        <tr>
+          <td>Mon 2/12 <br>
+            Wed 2/14</td>
+          <td><a class="disabled" href="lectures/">MVC + Autolayout</a></td>
+          <td><a class="disabled" href="https://github.com/iosdecal/ios-decal-lab2">Drummer</a></td>
+          <td rowspan="2"><a class="disabled" href="https://github.com/iosdecal/hw2">Hangman</a></td>
+        </tr>
+        <tr>
+          <td>Mon 2/19 <br>
+            Wed 2/21</td>
+			<td><font color="red">No class (Academic Holiday)</font></td>
+          <td><a class="disabled" href="https://github.com/iosdecal/ios-decal-lab3-fall17">Snapchat Clone Navigation</a></td>
+        </tr>
+        <tr>
+          <td>Mon 2/26 <br>
+            Wed 2/28</td>
+          <td><a class="disabled" href="lectures/">Multiview Applications</a></td>
+          <td><a class="disabled" href="https://github.com/iosdecal/ios-decal-lab4">Pokedex</a></td>
+			<td rowspan="3"><a class="disabled" href="https://github.com/iosdecal/ios-decal-hw3-part1">Snapchat Clone Part 1</a></td>
+        </tr>
+        <tr>
+          <td>Mon 3/5 <br>
+            Wed 3/7</td>
+          <td><a class="disabled" href="lectures/">Table Views + Collection Views</a></td>
+          <td>Custom App Work Day (+ Finish Pokedex)</td>
+        </tr>
+        <tr>
+          <td>Mon 3/12 <br>
+            Wed 3/14</td>
+          <td><a class="disabled" href="lectures/">Networking, Cocoapods, Alamofire, Firebase</a></td>
+          <td>Snapchat Firebase Setup</td>
+        </tr>
+        <tr>
+          <td>Mon 3/19 <br>
+            Wed 3/21</td>
+          <td><a class="disabled" href="lectures/">Mid-Semester Review</a></td>
+          <td>API lab</td>
+          <td rowspan="3"><a class="disabled" href="https://github.com/iosdecal/hw3-part2">Snapchat Clone Part 2</a></td>
+        </tr>
+        <tr>
+          <td>Mon 3/26 <br>
+            Wed 3/28</td>
+			<td><font color="red">Spring Break</font></td>
+		  <td><font color="red">Spring Break</font></td>
+        </tr>
+        <tr>
+          <td>Mon 4/2 <br>
+            Wed 4/4</td>
+          <td><a class="disabled" href="lectures/">Data persistance (NSUserDefaults + Core Data)</a></td>
+          <td><a class="disabled" href="https://github.com/iosdecal/ios-decal-AV-lab">Snapchat Camera</a></td>
+        </tr>
+        <tr>
+          <td>Mon 4/9 <br>
+            Wed 4/11</td>
+          <td><a class="disabled" href="lectures/">AVFoundation, Location, Mapkit</a></td>
+          <td>Project Work Day</td>
+          <td rowspan="6"><a class="disabled" href="http://iosdecal.com/other_files/final_app_spec.pdf">Custom App</a></td>
+        </tr>
+        <tr>
+          <td>Mon 4/16 <br>
+            Wed 4/18</td>
+          <td><a class="disabled" href="lectures/">UI/UX + Programmatic Design</a></td>
+          <td>Project Work Day</td>
+        </tr>
+        <tr>
+          <td>Mon 4/23 <br>
+            Wed 4/25</td>
+          <td><a class="disabled" href="lectures/lecture12-arkit-coreml.pdf">ARKit + Core ML</a></td>
+          <td>Project Work Day</td>
+        </tr>
+        <tr>
+          <td>Mon 4/30</td>
+          <td>RRR Week</td>
+          <td>Final Presentation <br>
+            <b>Attendance required</b></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
   <div id="staff" class="row">
     <div class="subheading">
@@ -255,7 +229,7 @@
       <li><strong>Lab:</strong> Wednesdays, 6:30-8pm in <a href="http://www.berkeley.edu/map?barrows" target="_blank">166 &amp; 170 Barrows</a></li>
     </ul>
     <h3>Course Description</h3>
-    The iOS DeCal was started by Professor Dan Garcia (now our Faculty Advisor) in as MS-DOS X, a student-run Objective-C course for OS X (and later iOS) development. Rebooted in the Fall 2015 semester, the renamed iOS DeCal now operates with the latest devices (e.g. iPhone, iPad, Apple Watch, Apple TV). By the end of the semester, students will have created a variety of apps, including one entirely of their own design. </div>
+    The iOS DeCal was started by Professor Dan Garcia (now our Faculty Advisor) in <span id="dan-from-the-future"> </span>as MS-DOS X, a student-run Objective-C course for OS X (and later iOS) development. Rebooted in the Fall 2015 semester, the renamed iOS DeCal now operates with the latest devices (e.g. iPhone, iPad, Apple Watch, Apple TV). By the end of the semester, students will have created a variety of apps, including one entirely of their own design. </div>
   <div id="grading" class="row">
     <h2>Grading</h2>
     30% Projects <br/>
