@@ -195,6 +195,11 @@ td {
     margin-left: 10px;
 }
 
+.former-container{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
 #title-container {
     margin-top: 10%;
     margin-bottom: 1%;
@@ -238,12 +243,42 @@ div.staff-grid img {
     border-radius: 10px;
 }
 
+div.former-grid {
+    padding-right: 30px;
+    padding-bottom: 20px;
+    float: left; 
+}
+
+div.former-grid: hover {}
+
+div.former-grid img {
+    height: 125px; 
+    width: 125px;
+    border-radius: 10px;
+}
+
+div.former-grid-name {
+    text-align: center;
+    font-size: 10pt;
+}
+
+div.former-grid-semester{
+    text-align: center;
+    font-size: 9pt;
+}
+
+div.former-grid-description {
+    text-align: center;
+    font-size: 9pt;
+}
+
 div.description {
     /* description for staff names */
     /* dont add any padding here */
     text-align: center;
     font-size: 10pt;
 }
+
 
 .button {
     background-color: #0099ff;
