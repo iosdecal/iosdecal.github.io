@@ -2,7 +2,7 @@
 
 ## Author
 
-Shawn D'Souza
+iOS DeCal Course Staff
 
 ## Purpose
 
