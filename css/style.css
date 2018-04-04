@@ -135,6 +135,7 @@ body {
     font-size: 11pt;
     margin: 0 auto;
     color: #202020;
+	overflow-x: hidden;
 }
 
 h2 {
@@ -149,6 +150,14 @@ h3 {
     font-weight: bold;
     font-size: 13pt;
     padding-top: 0px;
+}
+
+h4 {
+    font-size: 25pt;
+    color: #ffffff;
+    font-weight: 900;
+    font-style: italic;
+    padding-top: 10px;
 }
 
 hr {
@@ -298,6 +307,9 @@ div.description {
 .button:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
+
+section {padding:2rem;}
+.bg-blue {background-color:#0099ff;}
 
 #dan-from-the-future:before {
   content: "2001";

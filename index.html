@@ -2,11 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
 <head>
 <title>iOS DeCal</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 <meta http-equiv="Content-Type" content="text/html" ; charset="UTF-8">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="css/style.css">
-<script src="js/script.js"></script>
-<meta name="viewport" content="widtd=device-widtd, initial-scale=1">
+<script src="iphone-carousel/js/index.js"></script>
+<link rel="stylesheet" href="iphone-carousel/css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css?family=Muli:400,700,900i" rel="stylesheet">
 <!-- Favicon linking  -->
 <link rel="shortcut icon" href="/favicons/favicon.ico">
@@ -39,10 +41,10 @@
 </head>
 <body>
 <div id="title-container" class="main-container">
-  <div id="title" class="heading"> <img src="other_files/Logo.jpg" alt="iOS DeCal" style="widtd:150px;height:150px;"> </div>
+  <div id="title" class="heading"> <img src="other_files/Logo.jpg" alt="iOS DeCal" style="width:150px;height:150px;"> </div>
   <div id="class-number" class="subheading">
     <h1>cs 198-001 : spring 2018</h1>
-<!--    <h1><a href ="https://goo.gl/forms/1Yx5hjl7p1CT3p553"> check in </a><h1>-->
+    <!--    <h1><a href ="https://goo.gl/forms/1Yx5hjl7p1CT3p553"> check in </a><h1>--> 
   </div>
   <div id="menu" class="menu-subheading menu-container"> <a href="#syllabus">syllabus</a> &emsp; <a href="#staff">staff</a> &emsp; <a href="https://piazza.com/berkeley/spring2018/cs198001/home">piazza</a> &emsp; <a href="#about">about</a> &emsp; </div>
   <hr>
@@ -62,16 +64,16 @@
 <ul style="list-style-type:disc">
 <!--       <li>The deadline to submit an application is <b>Thursday, January 25th at 11:59 PM.</b></li> --> 
 <!-- 		<li><a href="https://www.youtube.com/watch?v=jQEBkK4MVQw&feature=youtu.be" target="_blank">Auto Layout tutorial</a></li> -->
-	<li><a href="other_files/final_app_spec.pdf" target="_blank">custom App Spec</a> released (due <strike>3/19</strike> <strong>3/20 at 11:59pm</strong>).</li>
-	<li>hw4-snapchat clone part 2 will be released wednesday.
-		<ul style="list-style-type:disc">
-			<li>setting up firebase in wednesday's lab</li>
-			<li>due TBA</li>
-		</ul>
-	</li>
-<!--<li><a href="https://github.com/chriszielinski/SegueDemo" target="_blank">Segue Demo</a> that we went over in lecture (<a href="https://github.com/chriszielinski/SegueDemoSolution" target="_blank">Solution</a>)</li>-->
-<!--        <li>Homework 3—Snapchat Clone Part 1 due 3/12 (No Autograder for this assignment).</li> -->
-		<!--<li><a href="#autograder">Autograder</a> released for hw2 (bonus point for submitting your token).</li>
+<li><a href="other_files/final_app_spec.pdf" target="_blank">custom App Spec</a> released (due <strike>3/19</strike> <strong>3/20 at 11:59pm</strong>).</li>
+<li>hw4-snapchat clone part 2 will be released wednesday.
+  <ul style="list-style-type:disc">
+    <li>setting up firebase in wednesday's lab</li>
+    <li>due TBA</li>
+  </ul>
+</li>
+<!--<li><a href="https://github.com/chriszielinski/SegueDemo" target="_blank">Segue Demo</a> that we went over in lecture (<a href="https://github.com/chriszielinski/SegueDemoSolution" target="_blank">Solution</a>)</li>--> 
+<!--        <li>Homework 3—Snapchat Clone Part 1 due 3/12 (No Autograder for this assignment).</li> --> 
+<!--<li><a href="#autograder">Autograder</a> released for hw2 (bonus point for submitting your token).</li>
     <ul>
     <li><strong>Note:</strong> This is optional, so if you are having trouble with it, submit your homework normally (github, bitbucket, or zip).</li>
     <li>Note²: If it's not working for you and you still want a bonus point, email us (iosdecalstaff@gmail.com) a screenshot and description of the bug/problem.</li>
@@ -125,7 +127,11 @@
         <td><a class="" href="lectures/2018/Spring/lecture4-multiview-applications.pdf">Multiview Applications</a></td>
         <td><a class="" href="https://github.com/iosdecal/ios-decal-lab3-snapchat-clone-nav">Snapchat Clone Navigation</a></td>
         <td rowspan="3"><a class="" href="https://github.com/iosdecal/ios-decal-hw3-part1">Snapchat Clone Part 1<br>
-          (due 03/12)<br><br><br><a class="" href="http://iosdecal.com/other_files/final_app_spec.pdf">Custom App Spec<br>(due 03/19)</a></a></td>
+          (due 03/12)<br>
+          <br>
+          <br>
+          <a class="" href="http://iosdecal.com/other_files/final_app_spec.pdf">Custom App Spec<br>
+          (due 03/19)</a></a></td>
       </tr>
       <tr>
         <td>Mon 3/5 <br>
@@ -300,6 +306,18 @@
     </div>
   </div>
 </div>
+<!--
+</div>
+<section class="bg-blue text-center">
+	<h4>Showcase</h4>
+	<div id="app"></div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.min.js"></script> 
+	<script src="iphone-carousel/js/index.js"></script>
+	<div class="github-card" data-user="lepture" data-repo="github-cards"></div>
+	<script src="https://cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+</section>
+<div id="overview-container" class="main-container">
+-->
 <div id="staff" class="row">
   <div class="subheading">
     <h2>Former Facilitators</h2>

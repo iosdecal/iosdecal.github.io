@@ -1,0 +1,156 @@
+let prefix = function(obj, prop, value) {
+  let prefs = ['webkit', 'Moz', 'O', 'ms'];
+  for (let pref in prefs) {
+    obj[prefs[pref] + prop] = value;
+  }
+}
+
+let backgroundImagesArray = [
+      "https://s3.amazonaws.com/underbelly/playground/01-executive-profile-small.jpg",
+      "https://s3.amazonaws.com/underbelly/playground/02-brands-page-small.jpg",
+      "https://s3.amazonaws.com/underbelly/playground/03-brand-page-small.jpg",
+      "https://s3.amazonaws.com/underbelly/playground/04-home-scrolled-small.jpg",
+      "https://s3.amazonaws.com/underbelly/playground/05-home-small.jpg",
+    ],
+    screenImagesArray = [
+      "https://s3.amazonaws.com/underbelly/playground/01-executive-profile.jpg",
+      "https://s3.amazonaws.com/underbelly/playground/02-brands-page.jpg",
+      "https://s3.amazonaws.com/underbelly/playground/03-brand-page.jpg",
+      "https://s3.amazonaws.com/underbelly/playground/04-home-scrolled.jpg",
+      "https://s3.amazonaws.com/underbelly/playground/05-home.jpg"
+    ],
+    phoneImg = "https://s3.amazonaws.com/underbelly/playground/phone.png";
+
+class PhoneSlider extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.initializeSlider = this.initializeSlider.bind(this);
+    this.goTo             = this.goTo.bind(this);
+
+    this.state = { slideIndex: 1 }
+  }
+  componentDidMount() {
+    this.initializeSlider();
+    let slider = React.findDOMNode(this.refs.slider);
+    slider.addEventListener("mousemove", function(event) {
+      console.log("x", event.pageX);
+      console.log("0 - 1", event.pageX / document.documentElement.clientWidth);
+      console.log("percent", Math.round((event.pageX / document.documentElement.clientWidth) * 100));
+    }, false);
+  }
+  initializeSlider() {
+    let backgroundSlider      = React.findDOMNode(this.refs.backgroundSlider),
+        backgroundSlides      = backgroundSlider.childNodes,
+        backgroundSlidesArray = [].slice.call(backgroundSlides),
+        backgroundLength      = backgroundSlidesArray.length,
+        backgroundTransform   = ((100 / backgroundLength) * this.state.slideIndex),
+        screenSlider          = React.findDOMNode(this.refs.screenSlider),
+        screenSlides          = screenSlider.childNodes,
+        screenSlidesArray     = [].slice.call(screenSlides),
+        screenLength          = screenSlidesArray.length,
+        screenTransform       = ((100 / screenLength) * this.state.slideIndex),
+        i;
+    for(i = 0; i < backgroundLength; i++) {
+      backgroundSlidesArray[i].style.width = ( 100 / backgroundLength) + "%";
+    }
+    for(i = 0; i < screenLength; i++) {
+      screenSlidesArray[i].style.width = ( 100 / screenLength) + "%";
+    }
+    backgroundSlider.style.width = (backgroundLength * 100) + "%";
+    screenSlider.style.width     = (screenLength * 100) + "%";
+    prefix(backgroundSlider.style, "Transform", `translateX(-20%)`);
+    prefix(screenSlider.style,     "Transform", `translateX(-20%)`);
+  }
+  goTo(index) {
+    let backgroundSlider      = React.findDOMNode(this.refs.backgroundSlider),
+        backgroundSlides      = backgroundSlider.childNodes,
+        backgroundSlidesArray = [].slice.call(backgroundSlides),
+        backgroundLength      = backgroundSlidesArray.length,
+        screenSlider          = React.findDOMNode(this.refs.screenSlider),
+        screenSlides          = screenSlider.childNodes,
+        screenSlidesArray     = [].slice.call(screenSlides),
+        screenLength          = screenSlidesArray.length;
+
+    prefix(backgroundSlider.style, "Transform", "translateX(-" + ((100 / backgroundLength) * index) + "%)");
+    prefix(screenSlider.style,     "Transform", "translateX(-" + ((100 / screenLength) * index) + "%)");
+
+    this.setState({ slideIndex: index });
+  }
+  render() {
+    let { backgroundImages, screenImages, phone } = this.props;
+    return (
+      <div className="slider" ref="slider">
+      <div className="phone-slider">
+        <div className="phone-slider__background background">
+          <ul ref="backgroundSlider" className="background__list">
+            {backgroundImages.map((item, index) => (
+              <PhoneSlide
+                key={index}
+                slideIndex={this.state.slideIndex}
+                index={index}
+                onClick={this.goTo}
+                img={item}
+                type="background"
+              />
+            ))}
+          </ul>
+        </div>
+
+        <div className="phone-slider__phone">
+          <img src={phone} alt="iPhone"/>
+          <div className="phone-slider__screen screen">
+            <ul ref="screenSlider" className="screen__list">
+              {screenImages.map((item, index) => (
+                <PhoneSlide
+                  key={index}
+                  slideIndex={this.state.slideIndex}
+                  index={index}
+                  img={item}
+                  type="screen"
+                />
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+      </div>
+    )
+  }
+}
+
+class PhoneSlide extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+  componentDidMount() {
+
+  }
+  componentWillUnmount() {
+
+  }
+  handleClick(event) {
+    event.preventDefault();
+    this.props.onClick(this.props.index);
+  }
+  render() {
+    let { img, type, index, slideIndex } = this.props,
+        active = (slideIndex === index) ? "active" : "";
+    if (type === "background") {
+      return (
+        <li className={`background__list-item background__list-item--${active}`} onClick={this.handleClick}>
+          <img src={img} />
+        </li>
+      )
+    } else if (type === "screen") {
+      return (
+        <li className="screen__list-item">
+          <img src={img} />
+        </li>
+      )
+    }
+  }
+}
+
+React.render(<PhoneSlider backgroundImages={backgroundImagesArray} screenImages={screenImagesArray} phone={phoneImg} />, document.getElementById("app"));
