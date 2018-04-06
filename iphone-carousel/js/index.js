@@ -167,7 +167,7 @@ var PhoneSlider = function (_React$Component) {
 				}
 			}
 			
-			var newSrc = "//cdn.jsdelivr.net/github-cards/1.0.2/cards/default.html?user=" + attributes[1] + "&identity=ghcard-" + attributes[1] + "-1&repo=" + attributes[2];
+			var newSrc = "https://cdn.jsdelivr.net/github-cards/1.0.2/cards/default.html?user=" + attributes[1] + "&identity=ghcard-" + attributes[1] + "-1&repo=" + attributes[2];
 			githubCard.setAttribute("src", newSrc);
 
 			prefix(backgroundSlider.style, "Transform", "translateX(-" + 100 / backgroundLength * index + "%)");
