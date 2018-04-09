@@ -51,46 +51,46 @@ var prefix = function prefix(obj, prop, value) {
 };
 
 var backgroundImagesArray = [
-		"iphone-carousel/imgs/bear_pax.png",
-		"iphone-carousel/imgs/golden.png",
-		"iphone-carousel/imgs/billy.png",
-		"iphone-carousel/imgs/hitcha.png",
-		"iphone-carousel/imgs/smart_camera_mock.png",
-		"iphone-carousel/imgs/food_whim.png",
-		"iphone-carousel/imgs/itravel.png",
-		"iphone-carousel/imgs/news.png"
+		"iphone-carousel/imgs/hourglass_iphone.png",
+		"iphone-carousel/imgs/bear_pax_iphone.png",
+		"iphone-carousel/imgs/food_whim_iphone.png",
+		"iphone-carousel/imgs/smart_camera_iphone.png",
+		"iphone-carousel/imgs/ezwifi_iphone.png",
+		"iphone-carousel/imgs/news_iphone.png",
+		"iphone-carousel/imgs/golden_iphone.png",
+		"iphone-carousel/imgs/billy_iphone.png"
 	],
 	screenImagesArray = [
-		"iphone-carousel/imgs/bear_pax.png",
-		"iphone-carousel/imgs/golden.png",
-		"iphone-carousel/imgs/billy.png",
-		"iphone-carousel/imgs/hitcha.png",
-		"iphone-carousel/imgs/smart_camera_large.png",
-		"iphone-carousel/imgs/food_whim.png",
-		"iphone-carousel/imgs/itravel.png",
-		"iphone-carousel/imgs/news.png"
+		"iphone-carousel/imgs/hourglass.gif",
+		"iphone-carousel/imgs/bear_pax.jpg",
+		"iphone-carousel/imgs/food_whim.gif",
+		"iphone-carousel/imgs/smart_camera.jpg",
+		"iphone-carousel/imgs/ezwifi.jpg",
+		"iphone-carousel/imgs/news.jpg",
+		"iphone-carousel/imgs/golden.jpg",
+		"iphone-carousel/imgs/billy.jpg"
 	],
 	imageCaptionsArray = [
+		"A productivity app that tracks your time being productive (or unproductive).",
 		"An extension for a liver monitoring device that was developed in another class. The app displays and gives a potential diagnosis of various diseases based on data taken from the device, allows the user to connect with other users via an anonymous forum, and find the nearest hospital or AA center.",
-		"Two view app with a weather view and a map view detailing where users can take cool photos around Berkeley and when Golden hour times are.",
-		"Billy the giraffe has a long neck; catch some scarves to keep him warm! This app is a simple game created using Apple’s SpriteKit framework.",
-		"Helps users get free rides with other users going to the same places or moving in the same direction as they are. It connects a hitch-hiker or ‘hitcha' to a driver that's driving close to a place where they are going.",
-		"A smart camera that aims to snap the perfect photo every time using computer vision!",
 		"Provides one restaurant suggestion at a time to help indecisive people choose where to eat.",
-		"Finds the optimal route to visit tourist attractions within a city, accounting for traveling times, hours of operation and time to spend at an attraction.",
-		"A news app that knows you."
+		"A smart camera that aims to snap the perfect photo every time using computer vision!",
+		"Connect to a wifi network automatically by scanning a QR Code.",
+		"A news app that knows you.",
+		"An app with a weather view and a map view detailing where users can take cool photos around Berkeley and when Golden hour times are.",
+		"Billy the giraffe has a long neck; catch some scarves to keep him warm! This app is a simple game created using Apple’s SpriteKit framework."
 	],
 	imageAttributionsArray = [
-		["Sarah Chin & Tiffany Liaw, Spring '17", "tliaw512", "BearPax"],
-		["David Xie & Evan Chang", "ossim", "golden"],
-		["Andre Lai", "andrelai812", "Billy-the-Giraffe"],
-		["Daniel Phiri", "danielphiri", "sharearide"],
-		["Gustavo Silva", "gusrsilva", "Picture-Perfect-iOS"],
-		["Erik Yang & Cedric Nixon", "erikyangs", "ios-decal-final-project"],
-		["Aakash Bhalothia & Mudit Gupta", "aakash-bhalothia", "iTravel"],
-		["Teddy Zhang & Jimmy Wei", "CptTeddy", "teddy-jimmy-ios"]
+		["Tao Ong & Caroline Zhou, fall '17", "taoong", "hourglass"],
+		["Sarah Chin & Tiffany Liaw, spring '17", "tliaw512", "BearPax"],
+		["Erik Yang & Cedric Nixon, spring '17", "erikyangs", "ios-decal-final-project"],
+		["Gustavo Silva, spring '17", "gusrsilva", "Picture-Perfect-iOS"],
+		["Nathan Phama, fall '17", "1313661888"],
+		["Teddy Zhang & Jimmy Wei, spring '17", "CptTeddy", "teddy-jimmy-ios"],
+		["David Xie & Evan Chang, spring '17", "ossim", "golden"],
+		["Andre Lai, spring '17", "andrelai812", "Billy-the-Giraffe"]
 	],
-	phoneImg = "https://s3.amazonaws.com/underbelly/playground/phone.png";
+	phoneImg = "iphone-carousel/imgs/phone.png";
 
 var PhoneSlider = function (_React$Component) {
 	_inherits(PhoneSlider, _React$Component);
@@ -104,7 +104,7 @@ var PhoneSlider = function (_React$Component) {
 		_this.goTo = _this.goTo.bind(_this);
 
 		_this.state = {
-			slideIndex: 1
+			slideIndex: 2
 		};
 		return _this;
 	}
@@ -114,11 +114,11 @@ var PhoneSlider = function (_React$Component) {
 		value: function componentDidMount() {
 			this.initializeSlider();
 			var slider = React.findDOMNode(this.refs.slider);
-			slider.addEventListener("mousemove", function (event) {
-				console.log("x", event.pageX);
-				console.log("0 - 1", event.pageX / document.documentElement.clientWidth);
-				console.log("percent", Math.round(event.pageX / document.documentElement.clientWidth * 100));
-			}, false);
+//			slider.addEventListener("mousemove", function (event) {
+//				console.log("x", event.pageX);
+//				console.log("0 - 1", event.pageX / document.documentElement.clientWidth);
+//				console.log("percent", Math.round(event.pageX / document.documentElement.clientWidth * 100));
+//			}, false);
 		}
 	}, {
 		key: 'initializeSlider',
@@ -142,8 +142,8 @@ var PhoneSlider = function (_React$Component) {
 			}
 			backgroundSlider.style.width = backgroundLength * 100 + "%";
 			screenSlider.style.width = screenLength * 100 + "%";
-			prefix(backgroundSlider.style, "Transform", 'translateX(-20%)');
-			prefix(screenSlider.style, "Transform", 'translateX(-20%)');
+			prefix(backgroundSlider.style, "Transform", 'translateX(-25%)');
+			prefix(screenSlider.style, "Transform", 'translateX(-25%)');
 		}
 	}, {
 		key: 'goTo',
@@ -167,8 +167,20 @@ var PhoneSlider = function (_React$Component) {
 				}
 			}
 			
-			var newSrc = "https://cdn.jsdelivr.net/github-cards/1.0.2/cards/default.html?user=" + attributes[1] + "&identity=ghcard-" + attributes[1] + "-1&repo=" + attributes[2];
-			githubCard.setAttribute("src", newSrc);
+			var appStoreCard = document.getElementById("appstore-card");
+			
+			if (attributes.length === 2) {
+				var appStoreCardFrame = document.getElementById("appstore-card-iframe");
+				appStoreCardFrame.src = "https://banners.itunes.apple.com/banner.html?bt=catalog&t=catalog_white&id=" + attributes[1] + "&c=us&l=en-US&w=300&h=250&store=apps";
+				githubCard.style.display = "none";
+				appStoreCardFrame.style.display="";
+				appStoreCard.style.display = "";
+			} else {
+				var newSrc = "https://cdn.jsdelivr.net/github-cards/1.0/cards/default.html?user=" + attributes[1] + "&identity=ghcard-" + attributes[1] + "-1&repo=" + attributes[2];
+				githubCard.src = newSrc;
+				githubCard.style.display = "";
+				appStoreCard.style.display = "none";
+			}
 
 			prefix(backgroundSlider.style, "Transform", "translateX(-" + 100 / backgroundLength * index + "%)");
 			prefix(screenSlider.style, "Transform", "translateX(-" + 100 / screenLength * index + "%)");

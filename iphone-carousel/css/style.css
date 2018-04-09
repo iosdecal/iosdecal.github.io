@@ -53,17 +53,17 @@ img {
 }
 @media screen and (min-width: 768px) {
   .phone-slider__background {
-    width: 74.0318906606%;
+    width: 88%;
     padding-left: 0;
     padding-right: 0;
   }
 }
 .phone-slider__screen {
   position: absolute;
-  top: 13.5%;
-  left: 13.5535307517%;
-  width: 73.3485193622%;
-  height: 69.5018226002%;
+  top: 4.5%;
+  left: 10.99%;
+  width: 78%;
+  height: 90.5%;
   overflow: hidden;
   z-index: 5;
   background-color: black
