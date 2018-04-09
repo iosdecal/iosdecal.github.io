@@ -146,6 +146,9 @@ var PhoneSlider = function (_React$Component) {
 			screenSlider.style.paddingLeft = "0px";
 			prefix(backgroundSlider.style, "Transform", 'translateX(-25%)');
 			prefix(screenSlider.style, "Transform", 'translateX(-25%)');
+			
+			var iphone = document.getElementById("iPhone");
+			iphone.style.zIndex = "10";
 		}
 	}, {
 		key: 'goTo',
@@ -159,7 +162,8 @@ var PhoneSlider = function (_React$Component) {
 				screenSlidesArray = [].slice.call(screenSlides),
 				screenLength = screenSlidesArray.length, 
 				iframeElements = document.getElementsByTagName("IFRAME"), 
-				attributes = imageAttributionsArray[index], 
+				attributes = imageAttributionsArray[index],
+				appStoreCard = document.getElementById("appstore-card"),
 				githubCard;
 			
 			for (var element of iframeElements) {
@@ -168,9 +172,7 @@ var PhoneSlider = function (_React$Component) {
 					break;
 				}
 			}
-			
-			var appStoreCard = document.getElementById("appstore-card");
-			
+						
 			if (attributes.length === 2) {
 				var appStoreCardFrame = document.getElementById("appstore-card-iframe");
 				appStoreCardFrame.src = "https://banners.itunes.apple.com/banner.html?bt=catalog&t=catalog_white&id=" + attributes[1] + "&c=us&l=en-US&w=300&h=250&store=apps";
@@ -237,10 +239,6 @@ var PhoneSlider = function (_React$Component) {
 						'div', {
 							className: 'phone-slider__phone'
 						},
-						React.createElement('img', {
-							src: phone,
-							alt: 'iPhone'
-						}),
 						React.createElement(
 							'div', {
 								className: 'phone-slider__screen screen'
@@ -260,7 +258,12 @@ var PhoneSlider = function (_React$Component) {
 									});
 								})
 							)
-						)
+						),
+						React.createElement('img', {
+							src: phone,
+							alt: 'iPhone',
+							id: 'iPhone'
+						})
 					)
 				),
 				React.createElement('div', { className: 'showcase-caption text-center' },
