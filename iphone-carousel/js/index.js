@@ -50,7 +50,8 @@ var prefix = function prefix(obj, prop, value) {
 	}
 };
 
-var backgroundImagesArray = [
+var phoneImg = "iphone-carousel/imgs/phone.png",
+	backgroundImagesArray = [
 		"iphone-carousel/imgs/hourglass_iphone.png",
 		"iphone-carousel/imgs/bear_pax_iphone.png",
 		"iphone-carousel/imgs/food_whim_iphone.png",
@@ -89,8 +90,7 @@ var backgroundImagesArray = [
 		["Teddy Zhang & Jimmy Wei, spring '17", "CptTeddy", "teddy-jimmy-ios"],
 		["David Xie & Evan Chang, spring '17", "ossim", "golden"],
 		["Andre Lai, spring '17", "andrelai812", "Billy-the-Giraffe"]
-	],
-	phoneImg = "iphone-carousel/imgs/phone.png";
+	];
 
 var PhoneSlider = function (_React$Component) {
 	_inherits(PhoneSlider, _React$Component);
@@ -142,6 +142,8 @@ var PhoneSlider = function (_React$Component) {
 			}
 			backgroundSlider.style.width = backgroundLength * 100 + "%";
 			screenSlider.style.width = screenLength * 100 + "%";
+			backgroundSlider.style.paddingLeft = "0px";
+			screenSlider.style.paddingLeft = "0px";
 			prefix(backgroundSlider.style, "Transform", 'translateX(-25%)');
 			prefix(screenSlider.style, "Transform", 'translateX(-25%)');
 		}
@@ -176,7 +178,7 @@ var PhoneSlider = function (_React$Component) {
 				appStoreCardFrame.style.display="";
 				appStoreCard.style.display = "";
 			} else {
-				var newSrc = "https://cdn.jsdelivr.net/github-cards/1.0/cards/default.html?user=" + attributes[1] + "&identity=ghcard-" + attributes[1] + "-1&repo=" + attributes[2];
+				var newSrc = "https://cdn.jsdelivr.net/github-cards/1.0/cards/default.html?user=" + attributes[1] + "&identity=ghcard-" + attributes[1] + "-1&repo=" + attributes[2] + "&target=blank&client_id=61cc8636c6f8d67267be&client_secret=fbdff7bca1b568dd3f22ce3f3633bb432ab50d05";
 				githubCard.src = newSrc;
 				githubCard.style.display = "";
 				appStoreCard.style.display = "none";

@@ -38,7 +38,7 @@ img {
 }
 .phone-slider__phone img {
   position: relative;
-  z-index: 10;
+  z-index: 100;
 }
 .phone-slider__background {
   position: absolute;
