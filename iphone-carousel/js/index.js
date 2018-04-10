@@ -146,9 +146,6 @@ var PhoneSlider = function (_React$Component) {
 			screenSlider.style.paddingLeft = "0px";
 			prefix(backgroundSlider.style, "Transform", 'translateX(-25%)');
 			prefix(screenSlider.style, "Transform", 'translateX(-25%)');
-			
-			var iphone = document.getElementById("iPhone");
-			iphone.style.zIndex = "10";
 		}
 	}, {
 		key: 'goTo',
@@ -242,8 +239,7 @@ var PhoneSlider = function (_React$Component) {
 						React.createElement('img', {
 							src: phone,
 							alt: 'iPhone',
-							id: 'iPhone',
-							zIndex: 10
+							id: '__phone'
 						}),
 						React.createElement(
 							'div', {

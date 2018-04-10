@@ -38,9 +38,12 @@ img {
 }
 .phone-slider__phone img {
   position: relative;
+  z-index: 1;
+}
+#__phone {
   z-index: 10;
   -webkit-transform: translate3d(0,0,0);
-	transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 .phone-slider__background {
   position: absolute;
