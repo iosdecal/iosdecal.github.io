@@ -239,6 +239,12 @@ var PhoneSlider = function (_React$Component) {
 						'div', {
 							className: 'phone-slider__phone'
 						},
+						React.createElement('img', {
+							src: phone,
+							alt: 'iPhone',
+							id: 'iPhone',
+							zIndex: 10
+						}),
 						React.createElement(
 							'div', {
 								className: 'phone-slider__screen screen'
@@ -258,12 +264,7 @@ var PhoneSlider = function (_React$Component) {
 									});
 								})
 							)
-						),
-						React.createElement('img', {
-							src: phone,
-							alt: 'iPhone',
-							id: 'iPhone'
-						})
+						)
 					)
 				),
 				React.createElement('div', { className: 'showcase-caption text-center' },
