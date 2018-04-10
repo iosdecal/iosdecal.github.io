@@ -42,7 +42,7 @@
 <meta property="og:description" content="Spring 2018 | Info Session January 18th!"/>
 </head>
 <body>
-<div id="title-container" class="main-container">
+<section id="title-container" class="main-container">
   <div id="title" class="heading"> <img src="other_files/Logo.jpg" alt="iOS DeCal" style="width:150px;height:150px;"> </div>
   <div id="class-number" class="subheading">
     <h1>cs 198-001 : spring 2018</h1>
@@ -51,8 +51,8 @@
   <div id="menu" class="menu-subheading menu-container"> <a href="#syllabus">syllabus</a> &emsp; <a href="#staff">staff</a> &emsp; <a href="https://piazza.com/berkeley/spring2018/cs198001/home">piazza</a> &emsp; <a href="#about">about</a> &emsp; <a href="#showcase">showcase</a> &emsp; </div>
   <hr>
   </hr>
-</div>
-<div id="overview-container" class="main-container">
+</section>
+<section id="overview-container" class="main-container container-fluid">
 <!--
   <div id="how-to-apply" class="row" style="text-align:center;">
         <h2>How to Apply</h2>
@@ -64,13 +64,14 @@
 <div id="announcements" class="row">
 <h2>Announcements</h2>
 <ul style="list-style-type:disc">
-	<li>hw4-snapchat clone part 2 due 4/7 at 11:59pm.</li>
+	<li>bring your <a href="https://brokenapplecords.files.wordpress.com/2015/06/img_5699.jpg" target="_blank">lightning cable</a> and iPhone to lab (4/11).</li>
+	<li>core data demo (solution available under the '<em>solution</em>' branch): <a href="https://github.com/iosdecal/Core-Data-Demo" target="_blank">https://github.com/iosdecal/Core-Data-Demo</a></li>
 </ul> 
 </div>
 <br>
 <div id="syllabus" class="row">
   <h2>Syllabus (Spring 2018)</h2>
-  <table>
+  <table class="table-responsive">
     <thead>
       <tr>
         <th>Week</th>
@@ -148,14 +149,14 @@
       <tr>
         <td>Mon 4/2 <br>
           Wed 4/4</td>
-        <td><a class="disabled" href="lectures/">Data persistance<br>
+        <td><a class="" href="lectures/2018/Spring/lecture8-data-persistence.pdf">Data persistance<br>
           (NSUserDefaults + Core Data)</a></td>
-        <td>API lab</td>
+        <td><s>API lab</s><br>Project Work Day</td>
       </tr>
       <tr>
         <td>Mon 4/9 <br>
           Wed 4/11</td>
-        <td><a class="disabled" href="lectures/">AVFoundation, Location, Mapkit</a></td>
+        <td><a class="" href="lectures/2018/Spring/lecture9-avfoundation+location+maps.pdf">AVFoundation, Location, Mapkit</a></td>
         <td><a class="disabled" href="https://github.com/iosdecal/ios-decal-AV-lab">Snapchat Camera</a></td>
         <td rowspan="6"><a class="" href="http://iosdecal.com/other_files/final_app_spec.pdf">Custom App</a></td>
       </tr>
@@ -180,7 +181,7 @@
     </tbody>
   </table>
 </div>
-<div id="staff" class="row">
+<div id="staff" class="container-fluid">
   <div class="subheading">
     <h2>Course Staff</h2>
   </div>
@@ -237,7 +238,7 @@
   </div>
 </div>
 <!-- End staff (total) --> 
-</div>
+</section>
 <section id="showcase" class="text-center">
 	<h4>Showcase</h4>
 	<div id="app"></div>
@@ -249,7 +250,7 @@
 	</div>
 	<script src="iphone-carousel/js/index.js"></script>
 </section>
-<div id="overview-container" class="main-container">
+<section class="main-container container-fluid">
 <!-- About -->
 <div id="about" class="row">
   <h2>About</h2>
@@ -271,7 +272,7 @@
     <li>Upon successfully grading, it will notify you and output a .token file in your project directory (where your .xcodeproj file is).</li>
     <li>Upload <strong>just</strong> the .token file to Gradescope.</li>
   </ul>
-  <form action="http://www.iosdecal.com/autograder/Autograder.dmg">
+  <form class="text-center" action="http://www.iosdecal.com/autograder/Autograder.dmg">
     <button class="button" type="submit" formtarget="_blank">Download Autograder</button>
   </form>
 </div>
@@ -297,7 +298,7 @@
   <div class="subheading">
     <h2>Course Advisor</h2>
   </div>
-  <div class="former-container">
+  <div class="former-container container-fluid">
     <div class="row">
       <div class="former-grid "> <img src="danGarcia.jpg" onmouseover="this.src='danGarciaEyebrow.jpg'" onmouseout="this.src='danGarcia.jpg'" alt="Dan Garcia" id="">
         <div class="former-grid-name"><a href="https://people.eecs.berkeley.edu/~ddgarcia/">Dan Garcia</a></div>
@@ -310,7 +311,7 @@
   <div class="subheading">
     <h2>Former Facilitators</h2>
   </div>
-  <div class="former-container">
+  <div class="former-container container-fluid">
     <div class="row">
       <div class="former-grid "> <img src="past-staff-photos/paige.jpg" alt="Paige Plander">
         <div class="former-grid-name"><a href="https://www.linkedin.com/in/paigeplander">Paige Plander</a></div>
@@ -339,6 +340,6 @@
     </div>
   </div>
 </div>
-</div>
+</section>
 </body>
 </html>
