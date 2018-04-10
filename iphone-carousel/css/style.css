@@ -38,10 +38,11 @@ img {
 }
 .phone-slider__phone img {
   position: relative;
-  z-index: 1;
+  z-index: 10;
 }
 #__phone {
-  z-index: 10;
+  position: relative;
+  z-index: 11;
   -webkit-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
 }
@@ -54,7 +55,7 @@ img {
           transform: translate3d(-50%, -50%, 0);
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-  z-index: 0;
+  z-index: 1;
 }
 @media screen and (min-width: 768px) {
   .phone-slider__background {
@@ -70,7 +71,7 @@ img {
   width: 78%;
   height: 90.5%;
   overflow: hidden;
-  z-index: 1;
+  z-index: 5;
   background-color: black
 }
 

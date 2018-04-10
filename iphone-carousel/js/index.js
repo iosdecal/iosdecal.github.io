@@ -146,6 +146,11 @@ var PhoneSlider = function (_React$Component) {
 			screenSlider.style.paddingLeft = "0px";
 			prefix(backgroundSlider.style, "Transform", 'translateX(-25%)');
 			prefix(screenSlider.style, "Transform", 'translateX(-25%)');
+			
+			setTimeout(function() {
+				var phone = document.getElementById("__phone");
+				phone.style.zIndex = 12;
+			}, 3000);
 		}
 	}, {
 		key: 'goTo',
