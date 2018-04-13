@@ -49,7 +49,7 @@ img {
 }
 .phone-slider__background {
   position: absolute;
-  top: 50%;
+  top: 54%;
   left: 50%;
   width: 83.9407744875%;
   -webkit-transform: translate3d(-50%, -50%, 0);
@@ -61,6 +61,7 @@ img {
 @media screen and (min-width: 768px) {
   .phone-slider__background {
     width: 88%;
+    top: 54%;
     padding-left: 0;
     padding-right: 0;
   }
@@ -100,6 +101,6 @@ img {
 }
 @media screen and (min-width: 768px) {
   .background__list-item img {
-    max-width: 75%;
+    max-width: 85%;
   }
 }

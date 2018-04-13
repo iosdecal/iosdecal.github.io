@@ -52,14 +52,14 @@ var prefix = function prefix(obj, prop, value) {
 
 var phoneImg = "iphone-carousel/imgs/phone.png",
 	backgroundImagesArray = [
-		"iphone-carousel/imgs/hourglass_iphone.png",
-		"iphone-carousel/imgs/bear_pax_iphone.png",
-		"iphone-carousel/imgs/food_whim_iphone.png",
-		"iphone-carousel/imgs/smart_camera_iphone.png",
-		"iphone-carousel/imgs/ezwifi_iphone.png",
-		"iphone-carousel/imgs/news_iphone.png",
-		"iphone-carousel/imgs/golden_iphone.png",
-		"iphone-carousel/imgs/billy_iphone.png"
+		"iphone-carousel/imgs/hourglass_screen.png",
+		"iphone-carousel/imgs/bear_pax_screen.png",
+		"iphone-carousel/imgs/food_whim_screen.png",
+		"iphone-carousel/imgs/smart_camera_screen.png",
+		"iphone-carousel/imgs/ezwifi_screen.png",
+		"iphone-carousel/imgs/news_screen.png",
+		"iphone-carousel/imgs/golden_screen.png",
+		"iphone-carousel/imgs/billy_screen.png"
 	],
 	screenImagesArray = [
 		"iphone-carousel/imgs/hourglass.gif",
