@@ -205,9 +205,9 @@ div.staff-grid {
 div.staff-grid :hover {
 }
 div.staff-grid img {
-    height: 150px;
-    width: 150px;
-    border-radius: 10px;
+    height: 125px;
+    width: 125px;
+    border-radius: 12px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -219,8 +219,8 @@ div.former-grid {
 div.former-grid: hover {
 }
 div.former-grid img {
-    height: 125px;
-    width: 125px;
+    height: 120px;
+    width: 120px;
     border-radius: 10px;
 }
 div.former-grid-name {
