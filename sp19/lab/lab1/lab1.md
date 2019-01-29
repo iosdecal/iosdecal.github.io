@@ -3,11 +3,11 @@
 
 ## Getting Started
 
-0: If you've installed Xcode and its command line tools properly, Git should already be installed on your computer. If it isn't, you can install it following [the instructions on the Git website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) or [using Homebrew](https://formulae.brew.sh/formula/git).
+1. If you've installed Xcode and its command line tools properly, Git should already be installed on your computer. If it isn't, you can install it following [the instructions on the Git website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) or [using Homebrew](https://formulae.brew.sh/formula/git).
 
-1: Open Terminal, and navigate to whichever directory you want to store assignments for this class in using the `cd` command.
+2. Open Terminal, and navigate to whichever directory you want to store assignments for this class in using the `cd` command.
 
-2: Clone the repository with this command:
+3. Clone the repository with this command:
 
 ```bash
 git clone https://github.com/iosdecal/iosdecal-sp19.git
