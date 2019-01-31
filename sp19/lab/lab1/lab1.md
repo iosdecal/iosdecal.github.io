@@ -86,12 +86,72 @@ frequency(ofNumbers: ns)  // returns "1:2, 2:5, 3:3"
 <details> <summary>**Hint 1**</summary>
 There are multiple ways to solve this problem, but the easiest way is probably to use a dictionary. How might a dictionary's hashing property benefit us in this problem?
 
-If you do end up using a dictionary, you may want to look ahead a bit to learn about **optionals** - you may need the `if let __ ` notation if you plan on accessing elements in the dictionary.
+If you do end up using a dictionary, you'll want to take a closer look at **optionals** - you may need the `if let __ ` notation if you plan on accessing elements in the dictionary.
 </details>
 
 <details> <summary>**Hint 2**</summary>
 You can use the `sort(by: )` function to sort an array by increasing or decreasing elements. Check out [this documentation article](https://developer.apple.com/documentation/swift/array/1688499-sort).
 </details>
 
+## Checkoff
 
-<br><br>
+Congrats on completing the first lab! Flag down your group's TA (or another TA, if they aren't available), and ask to get checked off. In general, check-offs consist of two parts: 
+
+1. A quick run-through of your lab just to make sure everything is working properly.
+2. A conceptual question or two to make sure you've understood what happened.
+
+After you've checked off, you're free to leave. But if you want a bit more practice thinking in Swift (or you're done early), give this next question a try :)
+
+## Problem 4 (Optional): Roman Numerals to Integer
+
+<small>*Adapted from this [LeetCode question](https://leetcode.com/problems/roman-to-integer/)*</small>
+
+This is a pretty common "whiteboard interview" question, but for the purposes of learning we're more concerned with your code working than it being fully optimized.
+
+First, some background: roman numerals are represented by seven different symbols: `I`, `V`, `X`, `L`, `C`, `D` and `M`.
+
+<center>
+
+| Symbol | Value |
+|:-:|:-:|
+| I | 1 |
+| V | 5 |
+| X | 10 |
+| L | 50 |
+| C | 100 |
+| D | 500 |
+| M | 1000 |
+
+</center>
+
+For example, `2` is written as `II`: just two one's added together. 12 is written as `XII`: `X` + `II`. 
+
+Roman numerals are generally written largest to smallest from left to right. However, the numeral for four is not `IIII`. Instead, 4 is written as `IV`. Because the one is before the five we subtract it making four. The same principle applies to 9, which is written as `IX`. There are six instances where subtraction is used:
+
+- `I` can be placed before `V` (5) and `X` (10) to make 4 and 9. 
+- `X` can be placed before `L` (50) and `C` (100) to make 40 and 90. 
+- `C` can be placed before `D` (500) and `M` (1000) to make 400 and 900.
+
+Implement a function `romanToInt` that takes a roman numeral as a string `num` and converts it to an integer. Input is guaranteed to be within the range from 1 to 3999.
+
+Here's some sample output:
+
+```swift
+romanToInt("III")      // returns 3
+
+romanToInt("LVIII")    // returns 58
+// Explanation: L = 50, V= 5, III = 3
+
+romanToInt("MCMXCIV")  // returns 1994
+// Explanation: M = 1000, CM = 900, XC = 90 and IV = 4
+```
+
+We'll leave this one as a challenge to you for the most part, so it may be worth sketching out the solution on scratch paper before starting and trawling the Apple Developer Documentation and StackOverflow if you're confused as to how to implement something. Please ask a TA if you're stuck; that's what we're here for!
+
+<details> <summary>**Hint**</summary>
+If you need a nudge in the right direction, it may be worth considering the *conditional ternary operator*. It takes the form `question ? answer1 : answer2`, and is essentially a shortcut for evaluating one of two expressions based on whether the question is true or false.
+
+Here's the relevant [Swift documentation](https://docs.swift.org/swift-book/LanguageGuide/BasicOperators.html#ID71).
+</details>
+
+<br><br><br>
