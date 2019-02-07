@@ -373,10 +373,10 @@ Recall that <strong>structures</strong> are a bit like Classes, except structs a
 
 <p>Going back to end of Part 1 / beginning of Part 2, lets create our <code>Employee</code> protocol. It should adopt our <code>Payable</code> and <code>TimeOff</code> protocols, and be empty inside.</p>
 
-<p>Now anyone that adopts this <code>Employee</code> protocol must also conform to the <code>Payable</code> and <code>TimeOff</code> protocols as well! So let&#39;s go back to our <code>Manager</code> struct and <code>Teacher</code> extension, take out where they are adopting the <code>Payable</code> and <code>TimeOff</code> protocol, and replace it with the <code>Employee</code> protocol (which now accounts for both of those).</p>
+<p>Now anyone that adopts this <code>Employee</code> protocol must also conform to the <code>Payable</code> and <code>TimeOff</code> protocols as well! So let&#39;s go back to our <code>Manager</code> and <code>Worker</code> extensions, take out where they are adopting the <code>Payable</code> and <code>TimeOff</code> protocol, and replace it with the <code>Employee</code> protocol (which now accounts for both of those).</p>
 
 <p><small>
-Note: Before you check off your lab with a TA, you might find it useful to run the included tests at the bottom of the playground file and compare your output with the expected results if you haven&#39;t already.
+<em>Note: Before you check off your lab with a TA, you might find it useful to run the included tests at the bottom of the playground file and compare your output with the expected results if you haven&#39;t already.</em>
 </small></p>
 
 <p><br><br></p>

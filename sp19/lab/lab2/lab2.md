@@ -104,11 +104,11 @@ There's one more neat thing you can do here. Notice that each struct here shares
 
 Going back to end of Part 1 / beginning of Part 2, lets create our `Employee` protocol. It should adopt our `Payable` and `TimeOff` protocols, and be empty inside.
 
-Now anyone that adopts this `Employee` protocol must also conform to the `Payable` and `TimeOff` protocols as well! So let's go back to our `Manager` struct and `Teacher` extension, take out where they are adopting the `Payable` and `TimeOff` protocol, and replace it with the `Employee` protocol (which now accounts for both of those).
+Now anyone that adopts this `Employee` protocol must also conform to the `Payable` and `TimeOff` protocols as well! So let's go back to our `Manager` and `Worker` extensions, take out where they are adopting the `Payable` and `TimeOff` protocol, and replace it with the `Employee` protocol (which now accounts for both of those).
 
 
 <small>
-Note: Before you check off your lab with a TA, you might find it useful to run the included tests at the bottom of the playground file and compare your output with the expected results if you haven't already.
+*Note: Before you check off your lab with a TA, you might find it useful to run the included tests at the bottom of the playground file and compare your output with the expected results if you haven't already.*
 </small>
 
 <br><br>
