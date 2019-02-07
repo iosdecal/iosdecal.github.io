@@ -11,12 +11,12 @@ Today, we'll be working with enums, structs, protocols, and extensions. Protocol
 
 With protocols, we're not stuck with subclassing from one base class. We can adopt as many protocols as we need and plug them in, take them out as we please during our development cycle.
 
-In this lab, you will design a workplace. Our end goal is to create these two structs:
+In this lab, you will design a simple workplace. Our end goal is to create these two structs:
 
 - `Manager`
 - `Worker`
 
-In creating these structs, there's a lot of similarity shared between them. Historically this problem was solved using inheritance (Object-Oriented Programming), but we're going to start with a protocol, not a class. And as stated, we're going to be creating these as structures, not classes.
+In creating these structs, there's a lot of similarity shared between them. Historically this problem was solved using inheritance (OOP), but we're going to start with a protocol, not a class. And as stated, we're going to be creating these as structures, not classes.
 
 Good luck, and don't be afraid to ask other students in your group or the TAs for help if you're stuck!
 
