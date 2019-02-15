@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>lab3</title>
+
+
+<style type="text/css">
+body {
+	font-family: "Avenir Next", Helvetica, Arial, sans-serif;
+	padding:1em;
+	margin:auto;
+	max-width:42em;
+	background:#fefefe;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+}
+
+h1 {
+	color: #000000;
+	font-size: 28pt;
+}
+
+h2 {
+	border-bottom: 1px solid #CCCCCC;
+	color: #000000;
+	font-size: 24px;
+}
+
+h3 {
+	font-size: 18px;
+}
+
+h4 {
+	font-size: 16px;
+}
+
+h5 {
+	font-size: 14px;
+}
+
+h6 {
+	color: #777777;
+	background-color: inherit;
+	font-size: 14px;
+}
+
+hr {
+	height: 0.2em;
+	border: 0;
+	color: #CCCCCC;
+	background-color: #CCCCCC;
+}
+
+p, blockquote, ul, ol, dl, li, table, pre {
+	margin: 15px 0;
+}
+
+a, a:visited {
+	color: #4183C4;
+	background-color: inherit;
+	text-decoration: none;
+}
+
+#message {
+	border-radius: 6px;
+	border: 1px solid #ccc;
+	display:block;
+	width:100%;
+	height:60px;
+	margin:6px 0px;
+}
+
+button, #ws {
+	font-size: 10pt;
+	padding: 4px 6px;
+	border-radius: 5px;
+	border: 1px solid #bbb;
+	background-color: #eee;
+}
+
+code, pre, #ws, #message {
+	font-family: Monaco;
+	font-size: 10pt;
+	border-radius: 3px;
+	background-color: #F8F8F8;
+	color: inherit;
+}
+
+code {
+	border: 1px solid #EAEAEA;
+	margin: 0 2px;
+	padding: 0 5px;
+}
+
+pre {
+	border: 1px solid #CCCCCC;
+	overflow: auto;
+	padding: 4px 8px;
+}
+
+pre > code {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+#ws { background-color: #f8f8f8; }
+
+.send { color:#77bb77; }
+.server { color:#7799bb; }
+.error { color:#AA0000; }
+</style>
+
+<style type="text/css">
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">Lab 3: Drummer</h1>
+
+<h2 id="toc_1">Getting Started</h2>
+
+<ol>
+<li><p>Open Terminal and navigate to the <code>iosdecal-sp19</code> directory using <code>cd</code>.</p></li>
+<li><p>Use <code>git pull</code> to fetch this lab&#39;s starter code.</p></li>
+</ol>
+
+<p>In today&#39;s lab, we&#39;ll be creating a responsive UI for a simple drum pad app using AutoLayout and hooking up to code with MVC.</p>
+
+<p><center><img src="assets/overview.gif" alt=""></center></p>
+
+<p>Open the file <code>Drummer.xcodeproj</code> to start the lab. We have provided the following files for you to use. </p>
+
+<ol>
+<li><p><code>Drumkit.swift</code> in the <code>Model</code> folder - this file contains the <q>brains</q> of our app, including the filenames for the audio files that we&#39;ll be using, as well as a method for playing these audio files. You (probably) won&#39;t need to modify this file, but please read through it before starting the lab! It&#39;ll make understanding things much easier :)</p></li>
+<li><p><code>DrummerViewController.swift</code> in the <code>Controller</code> folder - this file contains the ViewController class that will connect our View created in Interface Builder to our Model. You will be adding code to this file in this lab.</p></li>
+<li><p><code>Main.storyboard</code> in the <code>View</code> folder - this is where you will be creating your UI elements (buttons, labels, etc) and AutoLayout constraints. This file is automatically created for you each time you start a new Xcode project.</p></li>
+<li><p><code>Supporting Files</code> - contains all the audio clips we&#39;ll be using, as well as some other files we won&#39;t be using in today&#39;s lab (Ask a TA if you want to learn about them!)</p></li>
+</ol>
+
+<p>Good luck, and don&#39;t be afraid to ask other students in your group or the TAs for help if you&#39;re stuck!</p>
+
+<h2 id="toc_2">Part 1: Adding UI Elements to the View</h2>
+
+<p>Once you&#39;ve familarized yourself with the starting files we&#39;ve given you, open <code>Main.storyboard</code> to start with Storyboard.</p>
+
+<p>We have a total of 7 drum sounds, so we&#39;ll need to create 7 UI Buttons in our storyboard. <strong>Create 7 buttons, and add them to your view in the arrangement below.</strong> Since we want each button to play a unique sound, give each button a unique integer tag from 0 to 6 (you can change a button&#39;s tag value using the <em>Attributes Inspector</em>, under <em>View</em>)</p>
+
+<p><center>
+<img src="assets/button-layout.png" alt="">
+</center></p>
+
+<p>Let&#39;s add two more UI elements. <strong>Add one Label and one Segmented Control to the bottom of your view</strong>. We&#39;ll use these to switch between drum kits (different drum kits will have different sound files associated with them). Edit your UI Label to display <q>Drum Kit Type</q>, and change the values of your Segmented Control to <q>Acoustic</q> and <q>Electronic</q></p>
+
+<p><center>
+<img src="assets/segmented-control-layout.png" alt="">
+</center></p>
+
+<p>Try building your project now by pressing <code>Command + R</code> or the <q>Run</q> button at the top left corner of Xcode. You&#39;ll see that the UI looks different than it does in the Interface builder, and that there is a lot of extra white space. You can rotate the simulator by pressing <code>Hardware &gt; Rotate</code> to reveal some more UI issues. To fix these problems, let&#39;s use some AutoLayout!</p>
+
+<h2 id="toc_3">Part 2: Autolayout Constraints</h2>
+
+<p>For our app, we want to minimize the amount of whitespace by making the buttons as large as they possibly can be given the size of our screen. Instead of hard-coding in values for our buttons, we&#39;ll create constraints between each UI element.</p>
+
+<p><strong>You may add as many or as few constraints as you wish, but you must ensure the following to get credit for this lab:</strong></p>
+
+<ol>
+<li>Every button should stretch in width and height to fill the entire screen <em>(no hardcoded values for height and width!)</em></li>
+<li>All buttons must have the same height</li>
+<li>The first 6 buttons should have the same width and height</li>
+<li>The horizontal and vertical spacing between each button must be equal</li>
+<li>The label and the segmented control should remain the same height, regardless of screen size (Constrain their heights to a certain value).</li>
+</ol>
+
+<p><strong>Use the image below as a guide to make sure that you made your constraints correctly.</strong> Even though the screenshot only shows the UI for an iPhone XR, your app&#39;s UI elements should resize for any device size).</p>
+
+<p><img src="assets/constraints.png" alt=""></p>
+
+<p>You are free to customize your UI however you&#39;d like, as long as the constraint requirements listed above are satisfied.</p>
+
+<p><details> <summary><strong>Hint 1</strong></summary>
+To refresh your memory, you can create constraints in Storyboard by first clicking on a UI element, holding down <code>Control</code> and then dragging your cursor to another UI element or view. To fine-tune your constraints, open the Size Inspector in the Utilities pane. Scroll downwards to view all constraints on your UI element.
+</details></p>
+
+<p><details> <summary><strong>Hint 2</strong></summary>
+Don&#39;t forget about <a href="https://developer.apple.com/documentation/uikit/uistackview">StackViews</a>! They&#39;re great for displaying elements in a grid-like formation.
+</details></p>
+
+<h2 id="toc_4">Part 3: Connecting the Model, View, and Controller</h2>
+
+<p>Now that you&#39;ve finished the UI, we can now connect our View to our Model.</p>
+
+<h3 id="toc_5">a. Creating Outlets for the Drum Buttons in DrummerViewController.swift</h3>
+
+<p>Now we can start connecting the UI elements we created in our Storyboard to our ViewController file so we can edit them programmatically.</p>
+
+<p>Open the Assistant Editor so that <code>Main.storyboard</code> and <code>DrummerViewController.swift</code> are both open. <q><code>DrummerViewController</code></q> is the custom controller class associated with the view in <code>Main.storyboard</code>. Usually, you will have to set each of your ViewController&#39;s custom classes in the Identity Inspector in Interface Builder on your own, but we have done this step for you.</p>
+
+<p>Since we want our drum pad buttons to play an audio clip when pressed, we&#39;ll want to create an action in our ViewController that will be called each time the user taps a button. <strong>To do this, <code>Control-Drag</code> from one of your buttons to an empty line in <code>DrummerViewController.swift</code></strong>. The Connection should be an Action, the sender type should be set to UIButton, and the function name should be set to <q><code>drumButtonWasPressed</code></q>.</p>
+
+<p><small>
+<em>Note: We&#39;re setting the sender type to UIButton here (as opposed to leaving it on Any) because later on we&#39;re going to be using the <code>tag</code> property. If we don&#39;t set the sender type, Swift will get confused and throw an error because not all interactable elements have the <code>tag</code> property.</em>
+</small></p>
+
+<p>Since we want all of our buttons to activate this method (not just this one button we control + dragged from), <strong>connect all your other buttons to the IBAction <q>drumButtonWasPressed</q></strong>. Refer to the demo from last lecture if you need a reminder on how this works.</p>
+
+<p>To check that all your buttons were successfully connected to the IBAction, hover over the small circle next to <q>drumButtonWasPressed</q> in DrummerViewController.swift. All 7 buttons should appear highlighted in your Storyboard.</p>
+
+<p><center>
+<img src="assets/mouse-over-action.png" alt="">
+</center></p>
+
+<h3 id="toc_6">b. Adding Sound</h3>
+
+<p>Now we have an action method that will be called any time a user taps one of the drum buttons. As of now, nothing will happen. Since we want a drum sound to be played each time a user taps a button, <strong>add some code to our new <code>drumButtonWasPressed</code> method to allow each button to play a different sound clip</strong>. If all buttons play the same sound clip, make sure you set the <q>Tag</q> property for each button correctly in Part 1.</p>
+
+<p><details> <summary><strong>Hint</strong></summary>
+If you&#39;re stuck, take a look at <code>DrumKit.swift</code> in the <code>Model</code> folder. Perhaps there&#39;s a method implemented there you could call on in your controller?
+</details></p>
+
+<h3 id="toc_7">c. Switching Between Drum Kits</h3>
+
+<p>Right now, we can&#39;t switch between drum kits (tapping on the segmented control doesn&#39;t change anything). To fix this <strong>create an IBAction in DrummerViewController.swift for the Segmented Control</strong> in the same way as done above. Set the sender type to UISegmentedControl. You can name the method whatever you like, but we&#39;ll call it <q><code>drumKitWasChanged</code></q>.</p>
+
+<p><strong>Fill in the <code>drumKitWasChanged</code> method</strong> to allow the user to switch between drum kits by updating the <q>currentDrumKit</q> variable. If you implemented the method correctly, tapping on the Segmented Control in your app should change the sound of each drum button.</p>
+
+<p><details> <summary><strong>Hint</strong></summary>
+You&#39;ll want to use your UISegmentedControl property <code>selectedSegmentIndex</code>, which you can access using <code>sender.selectedSegmentIndex</code>.
+</details></p>
+
+<h2 id="toc_8">Part 4: Checkoff</h2>
+
+<p>We will check off your work based off the following criteria (all requirements must be satisfied to receive credit).</p>
+
+<ol>
+<li>All buttons and UI elements must dynamically change as shown in the preview gif for any device size and orientation (use the image in part 3 as a guide for how your app should look).</li>
+<li>Tapping on a drum button must play a sound (your app needs to work!)</li>
+<li>The Segmented Control should be able to switch between the two drum kit sounds</li>
+</ol>
+
+<p><br><br><br></p>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/x-mathjax-config">
+(function () {
+
+MathJax.Hub.Config({
+	'showProcessingMessages': false,
+	'messageStyle': 'none'
+});
+
+if (typeof MathJaxListener !== 'undefined') {
+	MathJax.Hub.Register.StartupHook('End', function () {
+		MathJaxListener.invokeCallbackForKey_('End');
+	});
+}
+
+})();
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+</body>
+
+</html>
