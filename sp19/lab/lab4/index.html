@@ -317,6 +317,17 @@ To create an image from a filename, use the <code>UIImage(named: String)</code> 
 In order to prevent image warping, you can set <code>UIButton.imageView?.contentMode = .scaleAspectFill</code> for each of your buttons. 
 </details></p>
 
+<p><details> <summary><strong>Hint 3</strong></summary>
+It&#39;s possible to iterate through elements in StackViews! Assuming your StackView is connected to your controller through an outlet named <code>stack</code>, use the following syntax:</p>
+
+<div><pre><code class="language-swift">for view in stack.arrangedSubviews {
+    // Functionality here
+}</code></pre></div>
+
+<p>Inside, you can use optional chaining on <code>view</code> to <q>cast</q> it as whatever particular object type you need.</p>
+
+<p></details></p>
+
 <h2 id="toc_3">Part 2: Image Preview</h2>
 
 <p>Now that you have your randomized image grid, it&#39;s time to add functionality to preview the images. </p>
@@ -331,17 +342,6 @@ In order to prevent image warping, you can set <code>UIButton.imageView?.content
 </center></p>
 
 <p>Now that you&#39;ve set up the second view controller, <strong>implement the viewer functionality as demonstrated in the demo in the <q>Getting Started</q> section.</strong> When you tap a picture from the selector screen it should bring up a larger version of the image (displayed on the button you defined above). Then, when a user taps the image the view should dismiss. You&#39;re responsible for figuring out how the segue should work, and what variables and logic you may need to pass through between views using the <code>prepare</code> and <code>viewDidLoad</code> methods. Refer to the demo files posted on the course website if you need a refresher on this.</p>
-
-<p><details> <summary><strong>Hint 1</strong></summary>
-It&#39;s possible to iterate through elements in StackViews! Assuming your StackView is connected to your controller through an outlet named <code>stack</code>, use the following syntax:</p>
-
-<div><pre><code class="language-swift">for view in stack.arrangedSubviews {
-    // Functionality here
-}</code></pre></div>
-
-<p>Inside, you can use optional chaining on <code>view</code> to <q>cast</q> it as whatever particular object type you need.</p>
-
-<p></details></p>
 
 <p><details> <summary><strong>Hint 2</strong></summary>
 If you find yourself needing to use one of your sender buttons&#39; properties in the <code>prepare</code> method <em>(hint hint)</em>, use the following syntax to do double optional chaining so you can access both the properties of <code>UIButton</code> and <code>ImageViewController</code>:</p>
