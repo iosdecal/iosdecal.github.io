@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>lab5</title>
+
+
+<style type="text/css">
+body {
+	font-family: "Avenir Next", Helvetica, Arial, sans-serif;
+	padding:1em;
+	margin:auto;
+	max-width:42em;
+	background:#fefefe;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+}
+
+h1 {
+	color: #000000;
+	font-size: 28pt;
+}
+
+h2 {
+	border-bottom: 1px solid #CCCCCC;
+	color: #000000;
+	font-size: 24px;
+}
+
+h3 {
+	font-size: 18px;
+}
+
+h4 {
+	font-size: 16px;
+}
+
+h5 {
+	font-size: 14px;
+}
+
+h6 {
+	color: #777777;
+	background-color: inherit;
+	font-size: 14px;
+}
+
+hr {
+	height: 0.2em;
+	border: 0;
+	color: #CCCCCC;
+	background-color: #CCCCCC;
+}
+
+p, blockquote, ul, ol, dl, li, table, pre {
+	margin: 15px 0;
+}
+
+a, a:visited {
+	color: #4183C4;
+	background-color: inherit;
+	text-decoration: none;
+}
+
+#message {
+	border-radius: 6px;
+	border: 1px solid #ccc;
+	display:block;
+	width:100%;
+	height:60px;
+	margin:6px 0px;
+}
+
+button, #ws {
+	font-size: 10pt;
+	padding: 4px 6px;
+	border-radius: 5px;
+	border: 1px solid #bbb;
+	background-color: #eee;
+}
+
+code, pre, #ws, #message {
+	font-family: Monaco;
+	font-size: 10pt;
+	border-radius: 3px;
+	background-color: #F8F8F8;
+	color: inherit;
+}
+
+code {
+	border: 1px solid #EAEAEA;
+	margin: 0 2px;
+	padding: 0 5px;
+}
+
+pre {
+	border: 1px solid #CCCCCC;
+	overflow: auto;
+	padding: 4px 8px;
+}
+
+pre > code {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+#ws { background-color: #f8f8f8; }
+
+.send { color:#77bb77; }
+.server { color:#7799bb; }
+.error { color:#AA0000; }
+</style>
+
+<style type="text/css">
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">Lab 5: Snapchat Navigation</h1>
+
+<h2 id="toc_1">Getting Started</h2>
+
+<ol>
+<li><p>Open Terminal and navigate to the <code>iosdecal-sp19</code> directory using <code>cd</code>.</p></li>
+<li><p>Use <code>git pull</code> to fetch this lab&#39;s starter files.</p></li>
+</ol>
+
+<p>Today&#39;s lab will be a bit of a change of pace - we&#39;ll be starting the Snapchat 1 project! After you complete this lab, you can either duplicate your project or just extend it to work on the Snapchat 1 project.</p>
+
+<p>In this lab, you&#39;ll complete the basic navigation elements for image selection. This includes the Collection View that will display your images, and the Table View that will allow you to select a feed to post to.</p>
+
+<p><center>
+<img src="assets/final-product.png" alt="">
+</center></p>
+
+<p>Open the file <code>Snapchat.xcodeproj</code> to start the lab. We have provided the following files for you to use. </p>
+
+<ol>
+<li><p><code>Assets.xcassets</code> - We&#39;ve included some images to start off with, along with some other image assets that you may need for the Snapchat 1 project. You&#39;re more than welcome to add/change the images we&#39;ve provided though!</p></li>
+<li><p><code>Data.swift</code> – a simple Model to get you started. It includes a list of image names and a list of feed names. Feel free to use and/or extend this for your various ViewControllers.</p></li>
+</ol>
+
+<p>If you want to replace some of the assets with selections of your own, you&#39;re welcome to do so! However, please leave the feed names as they are, because we&#39;re going to be using them in the second part of the Snapchat project!</p>
+
+<p>You&#39;re welcome to work on this lab in any way you want, as long as the end result is the same - but this is the order we&#39;d recommend you follow. Good luck, and don&#39;t be afraid to ask other students in your group or the TAs for help if you&#39;re stuck!</p>
+
+<h2 id="toc_2">Part 0: Review</h2>
+
+<p>Before you dive into this lab, take a good look at the demo for Lecture 5 posted on the course website. Familarize yourself with how we&#39;ve laid out the app in Storyboard, what properties each of them have, and how they all connect to their respective bits of code.</p>
+
+<p>It may also be helpful to take a look at the Apple Documentation for <a href="https://developer.apple.com/documentation/uikit/uitableview">TableViews</a> and <a href="https://developer.apple.com/documentation/uikit/uicollectionview">CollectionViews</a> (or at least skimming over the <em>Topics</em> section).</p>
+
+<p>When you feel like you have a solid grasp of how TableViews and CollectionViews work, you should be able to answer the following questions:</p>
+
+<ol>
+<li><p>How should the ViewController communicate with the TableView/ControllerView? What protocols must we extend, and what methods do we need to implement for it to work? </p></li>
+<li><p>How do Table and Collection cells work in practice - as in, what is actually happening when we dequeue and reuse a table cell?</p></li>
+<li><p>What is the point of a <q>Prototype Cell</q>? What steps do we take to turn a Storyboard Prototype Cell into an actual table/collection cell that we can dequeue/reuse in our app?</p></li>
+<li><p>What&#39;s an <q>identifier</q> (found in the Attributes Inspector), and why does our prototype cell need them? How does it differ from the <q>custom class</q> field in the Identity Inspector?</p></li>
+</ol>
+
+<p>If you&#39;re stuck, ask a TA for help! Be sure to check out the <a href="https://piazza.com/class/jrbay81cs73s4?cid=55">demo&#39;s post on Piazza</a> if you need some clarifications about the particularily confusing bits.</p>
+
+<h2 id="toc_3">Part 1: Storyboard</h2>
+
+<p>Now that you understand how TableViews and CollectionViews work, let&#39;s lay out our lab in Storyboard. In <code>Main.storyboard</code>, lay out and constrain objects according to the following guidelines:</p>
+
+<ol>
+<li><p>Drag out a <em>Navigation Controller</em>, and delete the attached <em>Root View Controller</em> it comes with (click the yellow circle in the top bar <img src="assets/yellow-circle.png" alt=""> and press &#39;delete&#39;). Set it as your Initial View Controller by selecting <q>Is Initial View Controller</q> in the Attributes Inspector.</p></li>
+<li><p>Drag out a <em>View Controller</em> and put a <em>Collection View</em> in it. This will be your image picker. <strong>Do not use a Collection View Controller!</strong> We want you to become familiar with how delegation and data sources work in this lab, and the pre-made Controller abstracts too much away to be understandable. Constrain the Collection View to fill the View&#39;s safe area, and create a segue of type <q>Root View Controller</q> from the Navigation Controller to this View Controller.</p></li>
+</ol>
+
+<p><center><img src="assets/root-controller-segue.png" alt="">
+</center></p>
+
+<ol>
+<li><p>In the Collection View, create a prototype cell (either through Attributes Inspector &gt; Items or by dragging in a <em>Collection View Cell</em>). Place an <em>Image View</em> inside that prototype cell, and constrain it to have equal width and height and an aspect ratio of 1:1 (square). Be sure to give your prototype cell an identifier! You may also want to set your Image View&#39;s content mode to <q>Aspect Fill</q>, so the images don&#39;t get squished.</p></li>
+<li><p>Drag out another <em>View Controller</em>, and put a <em>Table View</em>, two <em>Label</em>s, and a <em>Button</em> in it. This will be your feed picker. <strong>Do not use a Table View Controller!</strong>. Set the button&#39;s image (in the Attributes Inspector) to be goButton. Constrain them to look like the reference picture below. Create a segue between your image picker view and feed picker view of type <q>Show</q>, and give it an identifier.</p></li>
+<li><p>In the Table View, (either through Attributes Inspector &gt; Items or by dragging in a <em>Table View Cell</em>). Place a label inside that prototype cell, and format and constrain it however you wish. Be sure to give your prototype cell an identifier! </p></li>
+</ol>
+
+<p>When you&#39;re done, your storyboard should look like this:</p>
+
+<p><center><img src="assets/storyboard-ui.png" alt="">
+</center></p>
+
+<h2 id="toc_4">Part 2: Image Picker</h2>
+
+<p>Here comes the free-form part of the lab! <strong>Using the view controller you created with the collection view, implement the Image Picker functionality.</strong> </p>
+
+<p>Create a new file <code>ImagePickerViewController.swift</code> (if you choose to use the Cocoa Touch Class template, <strong>make sure it&#39;s a subclass of <code>UIViewController</code></strong>)! When a user loads into the view, they should be presented with a collection of square images that they will be able to scroll through.</p>
+
+<p><small>
+<em>Hint: Remember, we&#39;ve given you a list of image names in Data.swift - you&#39;re welcome to use it!</em> 
+</small></p>
+
+<p>Your app only needs to work in portrait mode, so you probably won&#39;t need to implement dynamically resizing collection view cells - but in case you want to, check out the Lecture 5 demo files and the <a href="https://piazza.com/class/jrbay81cs73s4?cid=55">corresponding Piazza post</a> to find out how to do so. </p>
+
+<p><details> <summary><strong>Hint 1</strong></summary>
+You may find it easier to create a seperate file to house the controller for your CollectionViewCell. To do this, create a new file using the Cocoa Touch Class template and have it subclass <code>UICollectionViewCell</code>. After you specify the class you&#39;ve created (in the cell&#39;s Identity Inspector), you should be able to create and manage outlets properly.
+</details></p>
+
+<p><details> <summary><strong>Hint 2</strong></summary>
+If you&#39;re trying to run your app and nothing appears in your collection view, recall that you need to set your Collection View&#39;s <code>delegate</code> and <code>dataSource</code> to <code>self</code>! Don&#39;t forget to extend the <code>UICollectionViewDelegate</code> and <code>UICollectionViewDataSource</code> protocols in your class too!
+</details></p>
+
+<p><details> <summary><strong>Hint 3</strong></summary>
+Recall that <code>indexPath</code> (in the respective methods where you might find it) is not an integer, but rather a constant of type <code>IndexPath</code>. If you want to get the item in an array at the position of indexPath, use <code>array[indexPath.item]</code>.
+</details></p>
+
+<p><details> <summary><strong>Hint 4</strong></summary>
+Recall that you can define a UIImage in code with the following syntax:</p>
+
+<div><pre><code class="language-swift">UIImage(named: &quot;asset_name_as_string&quot;)</code></pre></div>
+
+<p></details></p>
+
+<h2 id="toc_5">Part 3: Linking The Views</h2>
+
+<p>Now that you&#39;ve gotten your Collection View to present images in a scrollable fashion, let&#39;s link it up to our Feed Picker. Create a new file <code>FeedPickerViewController.swift</code> (if you choose to use the Cocoa Touch Class template, <strong>make sure it&#39;s a subclass of <code>UIViewController</code></strong>)! This will represent the Controller for our Feed Picker view.</p>
+
+<p><strong>Implement segue functionality in your Image Picker controller.</strong> Remember, you defined this segue earlier and gave an identifier to it!</p>
+
+<p>When you&#39;re done with this section, you should be able to tap on any image in the Image Picker to segue to the Feed Picker. The top label in the Feed Picker after the segue should read <code>&quot;Posting image: &#39;image-name&#39;&quot;</code>.</p>
+
+<p>Don&#39;t worry about the TableView in the Feed Picker being blank for now - we&#39;ll fill it out in the next section!</p>
+
+<p><details> <summary><strong>Hint 1</strong></summary>
+Here are some relevant functions you may want to take a look at: <code>didSelectItemAt</code> (part of <code>UICollectionViewDelegate</code>), <code>performSegue(withIdentifier: )</code>, <code>prepare(for segue: )</code>, and your destination View Controller&#39;s <code>viewDidLoad</code>.</p>
+
+<p>Keep in mind, you can&#39;t directly set the text of the destination&#39;s label from <code>prepare(for segue: )</code>, so you&#39;ll need to pass it in to the destination as an instance variable of the destination and then use <code>viewDidLoad</code> to set its text!
+</details></p>
+
+<p><details> <summary><strong>Hint 2</strong></summary>
+We can&#39;t reference the <code>indexPath</code> selected outside of the <code>didSelectItemAt</code> function. If you want to pass either <code>indexPath</code> or its respective image name to your destination View Controller, perhaps consider using an instance variable to <q>get the information out of</q> <code>didSelectItemAt</code>?
+</details></p>
+
+<h2 id="toc_6">Part 4: Feed Picker</h2>
+
+<p>This is the last stretch for the lab! Now that the segue between your Image Picker and Feed Picker works properly, <strong>implement the Feed Table&#39;s functionality.</strong></p>
+
+<p>The feed table should display rows containing each feed&#39;s name (remember, we&#39;ve provided this for you in <code>Data.swift</code>). When a row is selected, the bottom label should update with <code>&quot;To feed: &#39;destination_feed&#39;&quot;</code>. The blue <q>go</q> button doesn&#39;t need to do anything yet for this lab.</p>
+
+<p>Keep in mind, you&#39;ve already done something very similar for the Image Picker Collection View! If you&#39;re stuck, try referring back to the logic for that section; you&#39;ll find they&#39;re quite similar.</p>
+
+<p><details> <summary><strong>Hint 1</strong></summary>
+You may find it easier to create a seperate file to house the controller for your TableViewCell. To do this, create a new file using the Cocoa Touch Class template and have it subclass <code>UITableViewCell</code>. After you specify the class you&#39;ve created (in the cell&#39;s Identity Inspector), you should be able to create and manage outlets properly. It&#39;ll come with some pre-written functions (<code>awakeFromNib</code> and <code>setSelected</code>), but you&#39;re welcome to ignore those.
+</details></p>
+
+<p><details> <summary><strong>Hint 2</strong></summary>
+If you&#39;re trying to run your app and nothing appears in your table view, recall that you need to set your Table View&#39;s <code>delegate</code> and <code>dataSource</code> to <code>self</code>! Don&#39;t forget to extend the <code>UITableViewDelegate</code> and <code>UITableViewDataSource</code> protocols in your class too!
+</details></p>
+
+<h2 id="toc_7">Part 5: Checkoff</h2>
+
+<p>Congrats on finishing this week&#39;s lab - it was a long one! We&#39;ll be checking you off on the following criteria:</p>
+
+<ol>
+<li><strong>Collection View functionality</strong> (square images, proper constraints, etc)</li>
+<li><strong>The Image Picker &gt; Feed Picker segue</strong> (does the image name get passed through properly?)</li>
+<li><strong>Navigation Bar functionality</strong> (does the Back button actually take us back to the Image Picker?)</li>
+<li><strong>Table View functionality</strong> (does the feed name get displayed in the label properly?)</li>
+</ol>
+
+<p>We&#39;ll also select a random question from the four listed in Part 0 to ask you, just to make sure you&#39;ve conceptually understood what happened in this lab.</p>
+
+<p>Now that you&#39;re done with this lab, you&#39;ve already completed a sizeable chunk of the Snapchat 1 project! The full spec will be released <em>[date TBA]</em> and the full project will be due on <strong>Tues 3/12 at 11:59PM</strong>, so get started on that sooner rather than later!</p>
+
+<p><br></p>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/javascript">
+Prism.languages.clike={comment:[{pattern:/(^|[^\\])\/\*[\w\W]*?\*\//,lookbehind:!0},{pattern:/(^|[^\\:])\/\/.*/,lookbehind:!0}],string:{pattern:/(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,greedy:!0},"class-name":{pattern:/((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/i,lookbehind:!0,inside:{punctuation:/(\.|\\)/}},keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/,"boolean":/\b(true|false)\b/,"function":/[a-z0-9_]+(?=\()/i,number:/\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i,operator:/--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/,punctuation:/[{}[\];(),.:]/};
+</script>
+
+<script type="text/javascript">
+Prism.languages.swift=Prism.languages.extend("clike",{string:{pattern:/("|')(\\(?:\((?:[^()]|\([^)]+\))+\)|\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,inside:{interpolation:{pattern:/\\\((?:[^()]|\([^)]+\))+\)/,inside:{delimiter:{pattern:/^\\\(|\)$/,alias:"variable"}}}}},keyword:/\b(as|associativity|break|case|catch|class|continue|convenience|default|defer|deinit|didSet|do|dynamic(?:Type)?|else|enum|extension|fallthrough|final|for|func|get|guard|if|import|in|infix|init|inout|internal|is|lazy|left|let|mutating|new|none|nonmutating|operator|optional|override|postfix|precedence|prefix|private|Protocol|public|repeat|required|rethrows|return|right|safe|self|Self|set|static|struct|subscript|super|switch|throws?|try|Type|typealias|unowned|unsafe|var|weak|where|while|willSet|__(?:COLUMN__|FILE__|FUNCTION__|LINE__))\b/,number:/\b([\d_]+(\.[\de_]+)?|0x[a-f0-9_]+(\.[a-f0-9p_]+)?|0b[01_]+|0o[0-7_]+)\b/i,constant:/\b(nil|[A-Z_]{2,}|k[A-Z][A-Za-z_]+)\b/,atrule:/@\b(IB(?:Outlet|Designable|Action|Inspectable)|class_protocol|exported|noreturn|NS(?:Copying|Managed)|objc|UIApplicationMain|auto_closure)\b/,builtin:/\b([A-Z]\S+|abs|advance|alignof(?:Value)?|assert|contains|count(?:Elements)?|debugPrint(?:ln)?|distance|drop(?:First|Last)|dump|enumerate|equal|filter|find|first|getVaList|indices|isEmpty|join|last|lexicographicalCompare|map|max(?:Element)?|min(?:Element)?|numericCast|overlaps|partition|print(?:ln)?|reduce|reflect|reverse|sizeof(?:Value)?|sort(?:ed)?|split|startsWith|stride(?:of(?:Value)?)?|suffix|swap|toDebugString|toString|transcode|underestimateCount|unsafeBitCast|with(?:ExtendedLifetime|Unsafe(?:MutablePointers?|Pointers?)|VaList))\b/}),Prism.languages.swift.string.inside.interpolation.inside.rest=Prism.util.clone(Prism.languages.swift);
+</script>
+
+<script type="text/x-mathjax-config">
+(function () {
+
+MathJax.Hub.Config({
+	'showProcessingMessages': false,
+	'messageStyle': 'none'
+});
+
+if (typeof MathJaxListener !== 'undefined') {
+	MathJax.Hub.Register.StartupHook('End', function () {
+		MathJaxListener.invokeCallbackForKey_('End');
+	});
+}
+
+})();
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+</body>
+
+</html>
