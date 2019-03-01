@@ -132,6 +132,14 @@ You may find it easier to create a seperate file to house the controller for you
 If you're trying to run your app and nothing appears in your table view, recall that you need to set your Table View's `delegate` and `dataSource` to `self`! Don't forget to extend the `UITableViewDelegate` and `UITableViewDataSource` protocols in your class too!
 </details>
 
+<details> <summary>**Hint 3**</summary>
+If you want to set the title of the navigation bar to something else (in our example, we've set it to "Feed"), include this line in your viewDidLoad:
+
+```swift
+self.title = "Feed"
+```
+</details>
+
 ## Part 5: Checkoff
 Congrats on finishing this week's lab - it was a long one! We'll be checking you off on the following criteria:
 
