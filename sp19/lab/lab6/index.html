@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>lab6</title>
+
+
+<style type="text/css">
+body {
+	font-family: "Avenir Next", Helvetica, Arial, sans-serif;
+	padding:1em;
+	margin:auto;
+	max-width:42em;
+	background:#fefefe;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+}
+
+h1 {
+	color: #000000;
+	font-size: 28pt;
+}
+
+h2 {
+	border-bottom: 1px solid #CCCCCC;
+	color: #000000;
+	font-size: 24px;
+}
+
+h3 {
+	font-size: 18px;
+}
+
+h4 {
+	font-size: 16px;
+}
+
+h5 {
+	font-size: 14px;
+}
+
+h6 {
+	color: #777777;
+	background-color: inherit;
+	font-size: 14px;
+}
+
+hr {
+	height: 0.2em;
+	border: 0;
+	color: #CCCCCC;
+	background-color: #CCCCCC;
+}
+
+p, blockquote, ul, ol, dl, li, table, pre {
+	margin: 15px 0;
+}
+
+a, a:visited {
+	color: #4183C4;
+	background-color: inherit;
+	text-decoration: none;
+}
+
+#message {
+	border-radius: 6px;
+	border: 1px solid #ccc;
+	display:block;
+	width:100%;
+	height:60px;
+	margin:6px 0px;
+}
+
+button, #ws {
+	font-size: 10pt;
+	padding: 4px 6px;
+	border-radius: 5px;
+	border: 1px solid #bbb;
+	background-color: #eee;
+}
+
+code, pre, #ws, #message {
+	font-family: Monaco;
+	font-size: 10pt;
+	border-radius: 3px;
+	background-color: #F8F8F8;
+	color: inherit;
+}
+
+code {
+	border: 1px solid #EAEAEA;
+	margin: 0 2px;
+	padding: 0 5px;
+}
+
+pre {
+	border: 1px solid #CCCCCC;
+	overflow: auto;
+	padding: 4px 8px;
+}
+
+pre > code {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+#ws { background-color: #f8f8f8; }
+
+.send { color:#77bb77; }
+.server { color:#7799bb; }
+.error { color:#AA0000; }
+</style>
+
+<style type="text/css">
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">Lab 6: Cryptocurrency Ticker</h1>
+
+<h2 id="toc_1">Getting Started</h2>
+
+<ol>
+<li><p>Open Terminal and navigate to the <code>iosdecal-sp19</code> directory using <code>cd</code>.</p></li>
+<li><p>Use <code>git pull</code> to fetch this lab&#39;s starter files.</p></li>
+</ol>
+
+<p>For today&#39;s lab, you&#39;ll be creating a simple cryptocurrency ticker. Your app will fetch information from a third-party API using Swift&#39;s native networking capabilities, and will include options to switch to different crypto coins and currencies.</p>
+
+<p><center>
+<img src="assets/final-product.png" width="350">
+</center></p>
+
+<p>Open the file <code>CryptoTicker.xcodeproj</code> to start the lab. We&#39;ve given you a bit more to start with than we usually do - here&#39;s what&#39;s included:</p>
+
+<ol>
+<li><p><code>Main.storyboard</code>: We&#39;ve provided you with a basic Storyboard outline to get you started with the first section of this lab. You will be coming back to this file later to implement the Picker, Segmented Control, and <q>Refresh</q> button.</p></li>
+<li><p><code>ViewController.swift</code>: The main view controller file you&#39;ll be working with. We&#39;ve defined a few outlets to get you started.</p></li>
+<li><p><code>Data.swift</code>: We&#39;ve provided you with some arrays/dictionaries containing the data we want you to display in your Picker and Segmented Control. This includes:</p>
+
+<ul>
+<li><code>cryptoData: [String:String]</code> - a dictionary mapping cryptocurrency names to their ticker symbols</li>
+<li><code>cryptoNames: [String]</code> - an array of <code>cryptoData</code>&#39;s keys in alphabetical order</li>
+<li><code>currencyData: [String:String]</code> - a dictionary mapping currency shortcodes to their symbols</li>
+<li><code>currencyNames: String</code> - an array of <code>currencyData</code>&#39;s keys</li>
+</ul></li>
+</ol>
+
+<p>You&#39;re welcome to work on this lab in any order you want, as long as the end result is the same - but this is the order we&#39;d recommend you follow. Good luck, and don&#39;t be afraid to ask other students in your group or the TAs for help if you&#39;re stuck!</p>
+
+<h2 id="toc_2">Part 0: The API</h2>
+
+<p>We&#39;ll be using the <a href="https://www.cryptonator.com/api/">Cryptonator RESTful API</a>, specifically the <q>simple ticker</q> portion.</p>
+
+<div><pre><code class="language-none">https://api.cryptonator.com/api/ticker/btc-usd</code></pre></div>
+
+<p><strong>Take some time to familiarize yourself with this API before starting the lab.</strong> Click the link above, and read through the (short) documentation. Try entering the request URL into a new browser tab, or requesting a different base/target (you can refer to the ones in <code>Data.swift</code> to get started). Specifically, make a note of what fields are returned and where they are located - you can use this <a href="https://jsonformatter.curiousconcept.com">JSON Formatter tool</a> to make the output more readable. </p>
+
+<h2 id="toc_3">Part 1: Fetching and Parsing Data</h2>
+
+<p>Let&#39;s start out by implementing some default functionality for when the user first boots up our app. <strong>Implement the fetching, parsing and displaying of data for <code>BTC-USD</code>.</strong> By the end of this section, your app should be able to display data in this fashion:</p>
+
+<ul>
+<li>The topmost label should display the currency&#39;s three-letter ticker symbol (<q>BTC</q>), and the label below it should display the name (<q>Bitcoin</q>).</li>
+<li>The big label in the center should display the symbol of the target currency (<q>$</q>), followed by the current price of the cryptocurrency <em>rounded to two decimal places</em>.</li>
+<li>The label below that should display the change over the past hour, followed by a percent sign. If the change is negative, set the label&#39;s color to red, otherwise set it to green.</li>
+</ul>
+
+<p><center>
+<img src="assets/part-1.png" width="350">
+</center></p>
+
+<p><small>
+<em>Note: We highly recommend you create a new function called <code>fetchAndDisplayData</code> or something similar, and call it in your <code>viewDidLoad</code> rather than just writing everything in <code>viewDidLoad</code>. This will save you a lot of grief in the long run, as you will only need to make slight modifications to this function in later sections rather than having to copy-paste and rewrite it.</em>
+</small></p>
+
+<p><details> <summary><strong>Hint 1</strong></summary>
+Networking is a bit tricky to get the hang of in Swift! Recall what we need to set up a network connection:</p>
+
+<ol>
+<li>Define a URL with the <code>URL(string: _)</code> constructor</li>
+<li>Create a URLSession (<code>URLSession.shared</code> specifically)</li>
+<li>Define a <code>dataTask</code> on that URLSession using the URL, and define what you want to do on completion with the <code>completionHandler</code> closure. (remember, this is where you can parse JSON!)</li>
+<li>Start the <code>dataTask</code> with <code>.resume()</code></li>
+</ol>
+
+<p>For a concrete example, please see the Networking Lecture demo we did in class - the project file is on the course website.</p>
+
+<p></details></p>
+
+<p><details> <summary><strong>Hint 2</strong></summary></p>
+
+<p>Recall that JSONDecoder uses a struct that extends the <code>Codable</code> protocol (or <code>Decodable</code>, if you want to get more specific) to parse JSON. Here&#39;s an example from the <a href="https://developer.apple.com/documentation/foundation/jsondecoder">Apple documentation</a>, if you need a quick reference.
+</details></p>
+
+<p><details> <summary><strong>Hint 3</strong></summary></p>
+
+<p>Recall that we can&#39;t actually edit Storyboard elements from inside the networking closure, as it&#39;s not being run in the main thread! To get around this, we can use</p>
+
+<div><pre><code class="language-swift">DispatchQueue.main.async {
+    // code here
+}</code></pre></div>
+
+<p>Be sure to only use this sparingly and only for what is strictly necessary - forcing unnecessary instructions onto the main thread is a great way to slow your app to a halt!</p>
+
+<p></details></p>
+
+<p><details> <summary><strong>Hint 4</strong></summary></p>
+
+<p>You can set a label&#39;s color with the <code>.textColor</code> property, and you can define a color with the <code>UIColor.[colorname]</code> literal. See <a href="https://stackoverflow.com/a/25840201">this StackOverflow answer</a> for an example.</p>
+
+<p></details></p>
+
+<h2 id="toc_4">Part 2: Converting Currencies</h2>
+
+<p>Now let&#39;s extend your app a bit more. In Storyboard, add a <strong>Segmented Controller</strong> and a <strong>Button</strong> labeled <q>Refresh</q>, and constrain them properly (to the bottom of the view). You can set the number of segments and their names using Storyboard, no need to do it programmatically for this lab.</p>
+
+<p><center>
+<img src="assets/segmented-control.png" width="250">
+</center></p>
+
+<p>Connect an outlet and action for the segmented control (see Hint 2), and an action for the button in <code>ViewController.swift</code>. Then, implement the following functionality:</p>
+
+<ul>
+<li>The segmented control should default to <q>USD</q> (If you defined USD as the first segment, this should happen automatically)</li>
+<li>Changing the segmented control and pressing <q>Refresh</q> should update the information displayed with the appropriate API call (<code>BTC-USD</code>, <code>BTC-EUR</code>, and <code>BTC-GBP</code> respectively). </li>
+<li>The proper currency symbol should be displayed before the monetary amount, and the value should still be rounded to two decimal points.</li>
+</ul>
+
+<p><center>
+<img src="assets/part-2.png" width="350">
+</center></p>
+
+<p><details> <summary><strong>Hint 1</strong></summary></p>
+
+<p>If you took our advice above about placing the networking functionality in its own function, implementing the code for this function should be a very easy task! It should only involve passing in a new parameter, changing around the URL, and changing how some of the labels are displayed.</p>
+
+<p></details></p>
+
+<p><details> <summary><strong>Hint 2</strong></summary></p>
+
+<p>Segmented Controls are a bit weird in that they require both an outlet and an action to work properly but don&#39;t require having a delegate/datasource. Take a look at <a href="https://www.ioscreator.com/tutorials/segmented-control-ios-tutorial">this resource</a> for an example of how to implement a Segmented Control - you can skip most of the fluff about AutoLayout and the labels though.</p>
+
+<p></details></p>
+
+<h2 id="toc_5">Part 3: The Cryptocurrency Picker</h2>
+
+<p>Finally, let&#39;s give users the option to select between different cryptocurrencies. In Storyboard, drag in a <strong>Picker View</strong>, place it above the Segmented Control and Button, and constrain/define an outlet for it accordingly.</p>
+
+<p>We haven&#39;t covered Picker Views previously in this class, but that&#39;s okay, because Pickers utilize a delegate and datasource! </p>
+
+<p>Remember, you&#39;ll need to have <code>ViewController.swift</code> extend <code>UIPickerViewDelegate</code> and <code>UIPickerViewDataSource</code>, and set the Picker&#39;s <code>.delegate</code> and <code>.dataSource</code> to <code>self</code>. Here is the <a href="https://developer.apple.com/documentation/uikit/uipickerview">documentation for UIPickerView</a> to get you started. See Hint 1 for a bit of clarification if you&#39;re stuck.</p>
+
+<p>Since you should have a good understanding of delegates and datasources by now from Table Views and Collection Views, you should be able to implement the following:</p>
+
+<ul>
+<li>Your ticker should display the list of cryptocurrencies in alphabetical order (you can use <code>cryptoNames</code> in <code>Data.swift</code> for this)</li>
+<li>The default value for your ticker should be <q>Bitcoin</q> (if you use <code>cryptoNames</code> this should happen by default)</li>
+<li>Selecting a cryptocurrency in the picker and a currency in the segmented controller then pressing <q>Refresh</q> should update all the labels above with data from the appropriate API call.</li>
+</ul>
+
+<p><center>
+<img src="assets/part-3.png" width="350">
+</center></p>
+
+<p><details> <summary><strong>Hint 1</strong></summary></p>
+
+<p>Here are the relevant functions you may want to look at:</p>
+
+<ul>
+<li><code>numberOfComponents(in pickerView: _)</code> (required)</li>
+<li><code>numberOfRowsInComponent</code> (required)</li>
+<li><code>titleForRow</code></li>
+<li><code>didSelectRow</code></li>
+</ul>
+
+<p>Take a look at <a href="https://codewithchris.com/uipickerview-example/">this tutorial</a> for a concrete example of how to implement a Picker View. You can skip the part about adding more components, as our picker will only have one component (the name of the cryptocurrency).</p>
+
+<p></details></p>
+
+<h2 id="toc_6">Part 4: Checkoff</h2>
+
+<p>Congrats on finishing this week&#39;s lab! We&#39;ll be checking you off on the following criteria:</p>
+
+<ol>
+<li><strong>Default Data Loading</strong>: Does your app load <code>BTC-USD</code> by default?</li>
+<li><strong>Text Formatting</strong>: Does the price displayed include the currency symbol, and is the change percentage colored?</li>
+<li><strong>Segmented Controller and Picker</strong>: Does changing the respective value and pressing <q>refresh</q> update the data in the labels to something that we would expect?</li>
+</ol>
+
+<p>We&#39;ll also ask you to walk us through how the networking and JSON parsing parts of your code work, so be prepared to answer that!</p>
+
+<p><br></p>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/javascript">
+Prism.languages.clike={comment:[{pattern:/(^|[^\\])\/\*[\w\W]*?\*\//,lookbehind:!0},{pattern:/(^|[^\\:])\/\/.*/,lookbehind:!0}],string:{pattern:/(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,greedy:!0},"class-name":{pattern:/((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/i,lookbehind:!0,inside:{punctuation:/(\.|\\)/}},keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/,"boolean":/\b(true|false)\b/,"function":/[a-z0-9_]+(?=\()/i,number:/\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i,operator:/--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/,punctuation:/[{}[\];(),.:]/};
+</script>
+
+<script type="text/javascript">
+Prism.languages.swift=Prism.languages.extend("clike",{string:{pattern:/("|')(\\(?:\((?:[^()]|\([^)]+\))+\)|\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,inside:{interpolation:{pattern:/\\\((?:[^()]|\([^)]+\))+\)/,inside:{delimiter:{pattern:/^\\\(|\)$/,alias:"variable"}}}}},keyword:/\b(as|associativity|break|case|catch|class|continue|convenience|default|defer|deinit|didSet|do|dynamic(?:Type)?|else|enum|extension|fallthrough|final|for|func|get|guard|if|import|in|infix|init|inout|internal|is|lazy|left|let|mutating|new|none|nonmutating|operator|optional|override|postfix|precedence|prefix|private|Protocol|public|repeat|required|rethrows|return|right|safe|self|Self|set|static|struct|subscript|super|switch|throws?|try|Type|typealias|unowned|unsafe|var|weak|where|while|willSet|__(?:COLUMN__|FILE__|FUNCTION__|LINE__))\b/,number:/\b([\d_]+(\.[\de_]+)?|0x[a-f0-9_]+(\.[a-f0-9p_]+)?|0b[01_]+|0o[0-7_]+)\b/i,constant:/\b(nil|[A-Z_]{2,}|k[A-Z][A-Za-z_]+)\b/,atrule:/@\b(IB(?:Outlet|Designable|Action|Inspectable)|class_protocol|exported|noreturn|NS(?:Copying|Managed)|objc|UIApplicationMain|auto_closure)\b/,builtin:/\b([A-Z]\S+|abs|advance|alignof(?:Value)?|assert|contains|count(?:Elements)?|debugPrint(?:ln)?|distance|drop(?:First|Last)|dump|enumerate|equal|filter|find|first|getVaList|indices|isEmpty|join|last|lexicographicalCompare|map|max(?:Element)?|min(?:Element)?|numericCast|overlaps|partition|print(?:ln)?|reduce|reflect|reverse|sizeof(?:Value)?|sort(?:ed)?|split|startsWith|stride(?:of(?:Value)?)?|suffix|swap|toDebugString|toString|transcode|underestimateCount|unsafeBitCast|with(?:ExtendedLifetime|Unsafe(?:MutablePointers?|Pointers?)|VaList))\b/}),Prism.languages.swift.string.inside.interpolation.inside.rest=Prism.util.clone(Prism.languages.swift);
+</script>
+
+<script type="text/x-mathjax-config">
+(function () {
+
+MathJax.Hub.Config({
+	'showProcessingMessages': false,
+	'messageStyle': 'none'
+});
+
+if (typeof MathJaxListener !== 'undefined') {
+	MathJax.Hub.Register.StartupHook('End', function () {
+		MathJaxListener.invokeCallbackForKey_('End');
+	});
+}
+
+})();
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+</body>
+
+</html>
