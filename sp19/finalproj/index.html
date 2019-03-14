@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Final Project - iOS DeCal SP19</title>
+
+
+<style type="text/css">
+body {
+	font-family: "Avenir Next", Helvetica, Arial, sans-serif;
+	padding:1em;
+	margin:auto;
+	max-width:42em;
+	background:#fefefe;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+}
+
+h1 {
+	color: #000000;
+	font-size: 28pt;
+}
+
+h2 {
+	border-bottom: 1px solid #CCCCCC;
+	color: #000000;
+	font-size: 24px;
+}
+
+h3 {
+	font-size: 18px;
+}
+
+h4 {
+	font-size: 16px;
+}
+
+h5 {
+	font-size: 14px;
+}
+
+h6 {
+	color: #777777;
+	background-color: inherit;
+	font-size: 14px;
+}
+
+hr {
+	height: 0.2em;
+	border: 0;
+	color: #CCCCCC;
+	background-color: #CCCCCC;
+}
+
+p, blockquote, ul, ol, dl, li, table, pre {
+	margin: 15px 0;
+}
+
+a, a:visited {
+	color: #4183C4;
+	background-color: inherit;
+	text-decoration: none;
+}
+
+#message {
+	border-radius: 6px;
+	border: 1px solid #ccc;
+	display:block;
+	width:100%;
+	height:60px;
+	margin:6px 0px;
+}
+
+button, #ws {
+	font-size: 10pt;
+	padding: 4px 6px;
+	border-radius: 5px;
+	border: 1px solid #bbb;
+	background-color: #eee;
+}
+
+code, pre, #ws, #message {
+	font-family: Monaco;
+	font-size: 10pt;
+	border-radius: 3px;
+	background-color: #F8F8F8;
+	color: inherit;
+}
+
+code {
+	border: 1px solid #EAEAEA;
+	margin: 0 2px;
+	padding: 0 5px;
+}
+
+pre {
+	border: 1px solid #CCCCCC;
+	overflow: auto;
+	padding: 4px 8px;
+}
+
+pre > code {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+#ws { background-color: #f8f8f8; }
+
+.send { color:#77bb77; }
+.server { color:#7799bb; }
+.error { color:#AA0000; }
+</style>
+
+<style type="text/css">
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">iOS DeCal Final Project</h1>
+
+<p><strong>CS198-001 Spring 2019</strong></p>
+
+<h2 id="toc_1">Key Dates</h2>
+
+<ul>
+<li><em>App Proposal Due</em>: Thursday March 14 at 11:59 PM</li>
+<li><em>App Proposal Review</em>: During lab on Thursday March 14</li>
+<li><em>Progress Check-Ins</em>: Four labs from 4/11 to 5/2</li>
+<li><em>Code Due</em>: Friday May 3 at 11:59 PM. No extensions!</li>
+<li><em>Final Presentations</em>: TBA, during the end of RRR week <strong>(attendance mandatory)</strong></li>
+</ul>
+
+<h2 id="toc_2">App Proposal</h2>
+
+<p>Before starting on your project, you&#39;ll need to write up an app proposal providing an overview of your application. Your proposal must include the following information:</p>
+
+<ol>
+<li><strong>Group Members (up to 3)</strong>: List each member of your group along with their <em>berkeley.edu</em> email (or just your name/email if you&#39;re working alone)</li>
+<li><strong>Brief Project Description</strong>: Here you should explain what your application will do, and its main features (1 - 2 paragraphs).</li>
+<li><strong>Storyboard / App Flow Sketch</strong> Provide a rough sketch (scanned hand-drawn or digital) of what your app will look like. Don’t spend a lot of time on this! Show us how your views are related to give us an idea of the flow of your application. We are not expecting you to have your full UI and design fleshed out at this point. (Feel free to use <a href="https://proto.io/">Proto</a> or <a href="https://www.invisionapp.com/">InvisionApp</a>)</li>
+<li><strong>List of iOS frameworks, API’s, and SDK’s you plan on using</strong> - This could include things like Core Data, Camera / Photo Library, Timer, Google Maps API, etc. Refer to the list of <em>Awesome Cocoapods</em> on Piazza for ideas!</li>
+<li><strong>[Optional] Preferred TA</strong>: Your group will be assigned a TA advisor for the course of this project. If you have any strong preferences, list them here; otherwise we will assign groups based on TA expertise.</li>
+</ol>
+
+<p>Please submit your proposal using this link: <strong>[Link Pending]</strong>. It will be due <strong>Thursday March 14 at 11:59 PM</strong>.</p>
+
+<h2 id="toc_3">Progress Check-Ins</h2>
+
+<p>You and your group members will meet again throughout the weeks with your assigned TA to go over your progress. Though you do not have to turn anything in for this part, be prepared to show your TA what you’ve done in Xcode. This will be your lab check-off for those respective weeks, and you will be working with your TA to create checkoff goals for future weeks. In general, the plan will look like this:</p>
+
+<ul>
+<li><strong>4/4</strong>: Finalized idea, finalized sketch of UI and functionality flowchart</li>
+<li><strong>4/11</strong>: Work with your TA to decide your goals for this checkoff</li>
+<li><strong>4/18</strong>: Midpoint checkoff, app should be about halfway done. Demonstrate functionality, segues implemented, and mostly complete interfaces</li>
+<li><strong>4/25</strong>: Work with your TA to decide your goals for this checkoff</li>
+<li><strong>5/2</strong>: Present fully functional app to TA with only minor bugs if any, some final design touch-ups if needed</li>
+</ul>
+
+<h2 id="toc_4">Code Due</h2>
+
+<p>Items to submit:</p>
+
+<ol>
+<li><strong>Github link to project repository</strong>: Once your code has been pushed, please download it as a zip from Github (<q>Clone or Download</q> &gt; <q>Download ZIP</q>), and test that it still runs properly. If you want your repo to be private, please make sure both <code>@chromadrive</code> and <code>@rjpimentel</code> have collaborator permissions!</li>
+<li><strong>Video demo of your project</strong>: A short run-through of your app. We don’t need anything elaborately edited / planned - just navigate through your app, with some narration of what you are doing as you go along. We&#39;ll be using these to select the projects that will present during our final showcase.</li>
+<li><strong>App Logo and Screenshots</strong>: Include a small <q>press kit</q> for your app consisting of your app logo and a few relevant screenshots, compressed in a ZIP file.  We’ll be using these in our presentation slides if selected to present. You can take a screenshot of just the simulator (without the <q>iPhone ___</q> label by pressing <code>Command-Shift-4</code>, then <code>Space</code>, then holding <code>Command</code> and clicking the simulator window.</li>
+<li><strong>Short description of application</strong> Explain what your project can do, and its main features. This could be similar to the one you used in your proposal if your app idea has not changed since then - but if your app has changed significantly we&#39;d prefer you write a new version that is more accurate to what the app currently does.</li>
+</ol>
+
+<p>Projects will be due <strong>Friday May 3 at 11:59 PM</strong>. This project is meant to be completed over the course of five weeks, and it is up to you to define a scope for your project and a fallback plan if you aren&#39;t able to implement everything you originally wanted to. As such <strong>we will not be granting extensions for any reason, no exceptions</strong>, since you should not be waiting until the last minute to work on this.</p>
+
+<h2 id="toc_5">Final Presentation</h2>
+
+<p><strong>ATTENDANCE MANDATORY</strong></p>
+
+<p>On Thursday or Friday of dead week, our course facilitator Dan Garcia and a few guests from industry will be coming to see demos of selected app submissions. If you are selected to present, you will need to prepare a short blurb describing your app, a few screenshots or slides, and an app demo (more information on this will be available as the presentation day approaches). Top app submissions will be eligible for awards in the following categories:</p>
+
+<ul>
+<li>People’s Choice</li>
+<li>Most Innovative</li>
+<li>Social Impact</li>
+<li>Best Design</li>
+<li>Most Technical</li>
+</ul>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/x-mathjax-config">
+(function () {
+
+MathJax.Hub.Config({
+	'showProcessingMessages': false,
+	'messageStyle': 'none'
+});
+
+if (typeof MathJaxListener !== 'undefined') {
+	MathJax.Hub.Register.StartupHook('End', function () {
+		MathJaxListener.invokeCallbackForKey_('End');
+	});
+}
+
+})();
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+</body>
+
+</html>
