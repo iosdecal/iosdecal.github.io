@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>lab7</title>
+
+
+<style type="text/css">
+body {
+	font-family: "Avenir Next", Helvetica, Arial, sans-serif;
+	padding:1em;
+	margin:auto;
+	max-width:42em;
+	background:#fefefe;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+}
+
+h1 {
+	color: #000000;
+	font-size: 28pt;
+}
+
+h2 {
+	border-bottom: 1px solid #CCCCCC;
+	color: #000000;
+	font-size: 24px;
+}
+
+h3 {
+	font-size: 18px;
+}
+
+h4 {
+	font-size: 16px;
+}
+
+h5 {
+	font-size: 14px;
+}
+
+h6 {
+	color: #777777;
+	background-color: inherit;
+	font-size: 14px;
+}
+
+hr {
+	height: 0.2em;
+	border: 0;
+	color: #CCCCCC;
+	background-color: #CCCCCC;
+}
+
+p, blockquote, ul, ol, dl, li, table, pre {
+	margin: 15px 0;
+}
+
+a, a:visited {
+	color: #4183C4;
+	background-color: inherit;
+	text-decoration: none;
+}
+
+#message {
+	border-radius: 6px;
+	border: 1px solid #ccc;
+	display:block;
+	width:100%;
+	height:60px;
+	margin:6px 0px;
+}
+
+button, #ws {
+	font-size: 10pt;
+	padding: 4px 6px;
+	border-radius: 5px;
+	border: 1px solid #bbb;
+	background-color: #eee;
+}
+
+code, pre, #ws, #message {
+	font-family: Monaco;
+	font-size: 10pt;
+	border-radius: 3px;
+	background-color: #F8F8F8;
+	color: inherit;
+}
+
+code {
+	border: 1px solid #EAEAEA;
+	margin: 0 2px;
+	padding: 0 5px;
+}
+
+pre {
+	border: 1px solid #CCCCCC;
+	overflow: auto;
+	padding: 4px 8px;
+}
+
+pre > code {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+#ws { background-color: #f8f8f8; }
+
+.send { color:#77bb77; }
+.server { color:#7799bb; }
+.error { color:#AA0000; }
+</style>
+
+<style type="text/css">
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">Lab 7: Snapchat Networking</h1>
+
+<h2 id="toc_1">Getting Started</h2>
+
+<p>If you haven&#39;t downloaded CocoaPods yet, run the command <code>sudo gem install cocoapods</code> in your Terminal or <a href="https://brew.sh">download Homebrew</a> and run <code>brew install cocoapods</code>. As stated in Lecture, we recommend Homebrew but it does take a considerable while to install/update.</p>
+
+<p>In today&#39;s lab, we&#39;ll be integrating our Snapchat project with Firebase. This will allow us to keep a cloud-based record of all the snaps we post.  </p>
+
+<p><center><img src="https://media.giphy.com/media/XZKNniKtwwuWUujAPJ/giphy.gif" alt="" title="overview"></center></p>
+
+<p>You have two choices before starting: </p>
+
+<ol>
+<li>Build off your original Snapchat Project</li>
+<li>Build off our staff solution, <a href="https://drive.google.com/uc?export=download&id=1mO0gZPADyxqZkDeqlid9HQwjigQCfZlA">linked here</a></li>
+</ol>
+
+<h2 id="toc_2">Part 1: Set up Firebase</h2>
+
+<p>Before we write any code, let&#39;s set up a new Firebase project. </p>
+
+<ol>
+<li>Go to the <a href="https://firebase.google.com">firebase website</a> and press <q>Get Started</q>. </li>
+<li>Create a new project by pressing <q>Add project</q></li>
+<li>Name it something catchy</li>
+</ol>
+
+<p>Now, you should see the Firebase console. This is going to be the dashboard for all your Firebase-y needs. </p>
+
+<p>We want to link our app to our Firebase instance, so on the main screen press the iOS logo. </p>
+
+<p>Follow the steps on the website and you should be linked up! Remember, your iOS bundle ID is located in your Project Overview - the top icon in your navigation pane. </p>
+
+<p><center><img src="assets/bundle-id.png" alt=""></center></p>
+
+<p><strong>Important - If you&#39;re using our staff solution, rename the bundle identifier to something unique, generally <code>com.your-name.project-name</code>.</strong></p>
+
+<p><strong>Also Important - Once you start modifying your Podfile, also type <code>pod &#39;Firebase/Firestore&#39;</code> underneath <code>pod &#39;Firebase/Core&#39;</code> to add the Firestore Database to your project</strong></p>
+
+<p><details> <summary><strong>Hint 1</strong></summary>
+After running the terminal command <code>pod init</code>, a textfile called Podfile will be created. Use any text editor to add the lines <code>pod &#39;Firebase/Core&#39;</code> and <code>pod &#39;Firebase/Firestore&#39;</code> underneath the line <code># Pods for [project-name]</code>. Don&#39;t forget to save the file before calling <code>pod install</code>!
+</details></p>
+
+<p><details> <summary><strong>Hint 2</strong></summary>
+After running <code>pod install</code>, you will notice that a new file of type <code>.xcworkspace</code> is created in your project directory. Make sure to <strong>close your Xcode project</strong> and <strong>open the xcworkspace</strong> before writing any code. 
+</details></p>
+
+<p>You may have to wait a while for your app to build, but once Firebase has detected that you&#39;ve communicated with their servers move on to part 2.</p>
+
+<h2 id="toc_3">Part 2: Writing to the Database</h2>
+
+<p>Now that you&#39;ve connected your project to Firebase, it&#39;s time to set up the Firestore database. </p>
+
+<ol>
+<li>Navigate to Firebase&#39;s Database section on the sidebar and press <q>Create database</q>.</li>
+<li>Select <q>Start in test mode</q> and press <q>Enable</q></li>
+</ol>
+
+<p>The console you see now will start populating as soon as you add some data to it. Let&#39;s do just that.</p>
+
+<p>Navigate to the function in your project where you create a new Snap (<code>ImageFeed.addSnap</code> in the staff solution). </p>
+
+<p>Add code here to push the Snap to our Firestore database (refer to the lecture slides as a reference). You will not be able to store the UIImage directly with Firestore, so find a way to store the image&#39;s filename as a string instead.</p>
+
+<p>All Snap properities, eg. <code>user</code>,<code>date</code>, <code>seen</code>, and <code>image</code> (with the UIImage replaced for a string) should be stored under each Snap instance in Firebase. </p>
+
+<p><details> <summary><strong>Hint 3</strong></summary>
+You can&#39;t just get the filename from a UIImage instance, so you&#39;ll need to store the filename separately when initalizing a new Snap - this will require some tweaking of the Snap class if you&#39;re using the staff solution. 
+</details></p>
+
+<p><details> <summary><strong>Hint 4</strong></summary>
+For reference, you will probably use the method <code>db.collection(&quot;collection-name&quot;).document(&quot;document-name&quot;).setData([String:Any], merge: true)</code>. If no document or collection exists with the name you provide, it will automatically add a new one for you. </p>
+
+<p>The addition of <code>merge: true</code> will merge the data with existing documents of the same name, instead of overwritting all of its properties (For instance, if you&#39;re just trying to change the <code>seen</code> attribute of a snap, you don&#39;t want to overwrite all the snap&#39;s other data).</details></p>
+
+<p>If you can demonstrate the following properties, you can check off for this lab: </p>
+
+<ol>
+<li>Your database updates when you add a snap</li>
+<li>Your database changes the snap&#39;s <code>seen</code> attribute in the database after viewing the image. </li>
+</ol>
+
+<h2 id="toc_4">Part 3: Reading from the Database (1pt Extra Credit)</h2>
+
+<p>The logical next step would be to also read your data from Firebase instead of your local data structures. </p>
+
+<p>Use the lecture slides and <a href="https://firebase.google.com/docs/firestore/query-data/get-data">the Firestore documentation</a> to populate your Feed table view with the data currently stored on Firebase. </p>
+
+<p>This is will likely take a little longer than the previous part, and as such we will give <em>1 point of extra credit</em> to anyone who completes this portion by Tuesday. </p>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/x-mathjax-config">
+(function () {
+
+MathJax.Hub.Config({
+	'showProcessingMessages': false,
+	'messageStyle': 'none'
+});
+
+if (typeof MathJaxListener !== 'undefined') {
+	MathJax.Hub.Register.StartupHook('End', function () {
+		MathJaxListener.invokeCallbackForKey_('End');
+	});
+}
+
+})();
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+</body>
+
+</html>
