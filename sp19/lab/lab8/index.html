@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>lab8</title>
+
+
+<style type="text/css">
+body {
+	font-family: "Avenir Next", Helvetica, Arial, sans-serif;
+	padding:1em;
+	margin:auto;
+	max-width:42em;
+	background:#fefefe;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+}
+
+h1 {
+	color: #000000;
+	font-size: 28pt;
+}
+
+h2 {
+	border-bottom: 1px solid #CCCCCC;
+	color: #000000;
+	font-size: 24px;
+}
+
+h3 {
+	font-size: 18px;
+}
+
+h4 {
+	font-size: 16px;
+}
+
+h5 {
+	font-size: 14px;
+}
+
+h6 {
+	color: #777777;
+	background-color: inherit;
+	font-size: 14px;
+}
+
+hr {
+	height: 0.2em;
+	border: 0;
+	color: #CCCCCC;
+	background-color: #CCCCCC;
+}
+
+p, blockquote, ul, ol, dl, li, table, pre {
+	margin: 15px 0;
+}
+
+a, a:visited {
+	color: #4183C4;
+	background-color: inherit;
+	text-decoration: none;
+}
+
+#message {
+	border-radius: 6px;
+	border: 1px solid #ccc;
+	display:block;
+	width:100%;
+	height:60px;
+	margin:6px 0px;
+}
+
+button, #ws {
+	font-size: 10pt;
+	padding: 4px 6px;
+	border-radius: 5px;
+	border: 1px solid #bbb;
+	background-color: #eee;
+}
+
+code, pre, #ws, #message {
+	font-family: Monaco;
+	font-size: 10pt;
+	border-radius: 3px;
+	background-color: #F8F8F8;
+	color: inherit;
+}
+
+code {
+	border: 1px solid #EAEAEA;
+	margin: 0 2px;
+	padding: 0 5px;
+}
+
+pre {
+	border: 1px solid #CCCCCC;
+	overflow: auto;
+	padding: 4px 8px;
+}
+
+pre > code {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+#ws { background-color: #f8f8f8; }
+
+.send { color:#77bb77; }
+.server { color:#7799bb; }
+.error { color:#AA0000; }
+</style>
+
+<style type="text/css">
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">Lab 8: Camera Sampler</h1>
+
+<h2 id="toc_1">Getting Started</h2>
+
+<ol>
+<li><p>Open Terminal and navigate to the <code>iosdecal-sp19</code> directory using <code>cd</code>.</p></li>
+<li><p>Use <code>git pull</code> to fetch this lab&#39;s starter files.</p></li>
+</ol>
+
+<p>Welcome to the sampler lab for <code>UIImagePickerController</code> and friends! In this lab, you&#39;ll be implementing a simplified version of UIImagePickerController. You&#39;ll learn how to use it to both pick photos from your phone&#39;s photo library, and to have the users take a photo with the device&#39;s camera. <strong>Note that UIImagePickerController is not the same as the AVCaptureSession, etc. that we&#39;ve been talking about in lecture.</strong> It is a pre-built implementation of some key AVCapture functionality, and is much easier to use at the cost of flexibility.</p>
+
+<p>As a reminder, sampler labs are short mini-labs designed to introduce you to a particular concept. They should be fairly simple and straightforward to implement, and shouldn&#39;t take too long to complete. You only need to complete three out of the five sampler labs we assign to recieve full credit, so we recommend you do the ones that you think might be most relevant to your project or that you find the most interesting. You have until <strong>April 30</strong> to turn them in, so you&#39;re welcome to work on these in any order and at any time.</p>
+
+<p><center>
+<img src="assets/final-product.gif" alt="">
+</center></p>
+
+<p>Open the file <code>Camera.xcodeproj</code> to start the lab. We have provided the following files for you to use. </p>
+
+<ol>
+<li><p><code>Main.storyboard</code> - The main storyboard file. Everything here should already be set up for you, so you won&#39;t need to touch anything. You should still look through it and understand what the components are doing!</p></li>
+<li><p><code>ViewController.swift</code> - Our main controller file, and where you&#39;ll be writing your code for this lab. We&#39;ve already connected the outlets and actions that you&#39;ll need.</p></li>
+</ol>
+
+<p>You&#39;re welcome to work on this lab in any way you want, as long as the end result is the same - but this is the order we&#39;d recommend you follow. Good luck, and don&#39;t be afraid to ask other students in your group or the TAs for help if you&#39;re stuck!</p>
+
+<h2 id="toc_2">Part 1: Photo Library</h2>
+
+<p>Once you&#39;re done taking a look through our starter files and understand what is happening, let&#39;s start by implementing the photo library picker. To do this, we&#39;ll need to first configure a UIImagePickerController.</p>
+
+<p>First, we need to <strong>make the ViewController class extend <code>UIImagePickerControllerDelegate</code> and <code>UINavigationControllerDelegate</code>.</strong> The picker delegate is responsible for configuring the settings of our image picker, and the navigation delegate handles the showing and dismissing of the actual picker controller. You&#39;ll use them both in this section.</p>
+
+<p><strong>In the <code>photoLibraryButtonPressed()</code> IBAction, initialize a <code>UIImagePickerController()</code> called <code>picker</code>.</strong> Then, set <code>picker</code>&#39;s delegate to <code>self</code>, since we want our ViewController class to be able to set <code>picker</code>&#39;s settings.</p>
+
+<p>Now, let&#39;s define the source type. For this section, <strong>set <code>picker.sourceType</code> to <code>.photoLibrary</code></strong>. <a href="https://developer.apple.com/documentation/uikit/uiimagepickercontroller/sourcetype">Here&#39;s a list</a> of valid entries for <code>sourceType</code> (under Topics &gt; Constants).</p>
+
+<p>Finally, let&#39;s present our image picker. Call <code>self.present()</code>, and pass in <code>picker</code> as the view controller we want to present. You can set the other arguments to whatever you want, but in general if you&#39;re not planning to do anything special after presenting the view controller it&#39;s generally a good idea to have <code>animated</code> as <code>true</code> and <code>completion</code> as <code>nil</code>.</p>
+
+<p>If all goes well, the image picker should pop up after pressing the <q>Photo Library</q> button! You can even select a photo and the picker will go away, but nothing displays in the image view. Let&#39;s fix that in the next section.</p>
+
+<h2 id="toc_3">Part 2: Displaying a Chosen Image</h2>
+
+<p>Turns out, we need to access the image that was chosen in the <code>didFinishPickingMediaWithInfo</code> method (from <code>UINavigationControllerDelegate</code>). Below all the other functions, <strong>define the <code>didFinishPickingMediaWithInfo</code> method</strong>. Much like TableView&#39;s <code>cellForRowAt</code>, etc. the function name is actually <code>imagePickerController</code> and the element&#39;s name is called <code>didFinishPickingMediaWithInfo</code>, so you&#39;ll probably  need to use Xcode&#39;s tab-complete functionality to fill out the correct method.</p>
+
+<p>Now that we&#39;ve defined that method, we now have access to a dictionary called <code>info</code>, which contains all the information we need about what was selected and anything else that happened. <strong>Set <code>imageView</code>&#39;s image to the image we selected from the picker.</strong> You can access this value in the <code>info</code> dictionary with key <code>UIImagePickerController.InfoKey.originalImage</code> (although you may have to convert it to a UIImage first).</p>
+
+<p>Finally, because we&#39;ve overriden the default implementation of this method, we need to manually dismiss the image picker. Similarly to what we did above to display the picker, <strong>call <code>dismiss()</code> at the end of the function to dismiss the controller.</strong> Again, you should set <code>animated</code> to <code>true</code> and <code>completion</code> to <code>nil</code>, as we&#39;re not performing any special functionality while dismissing.</p>
+
+<p>Now, if you try to run your app, you&#39;ll see that we can access the photo library via the picker, select a photo, and have the photo display in our Image View!</p>
+
+<h2 id="toc_4">Part 3: Camera</h2>
+
+<p>As it turns out, UIImagePickerController is so flexible that we&#39;re already 95% of the way to having a working camera implementation with the code we&#39;ve already written.</p>
+
+<p><strong>Copy-paste the code you wrote in <code>photoLibraryButtonPressed</code> to <code>cameraButtonPressed</code>, and modify its source to work with the camera rather than the photo library</strong>. You shouldn&#39;t need to change too much.</p>
+
+<p><small> <em>Hint: Take a look at the <a href="https://developer.apple.com/documentation/uikit/uiimagepickercontroller/sourcetype">valid sourceType types</a> if you&#39;re stuck!</em>
+</small></p>
+
+<p>When you test your app in the simulator, you&#39;ll notice that it stutters a bit, and then crashes with this error:</p>
+
+<div><pre><code class="language-none">Camera[67268:3639170] [discovery] errors encountered while discovering extensions:
+Error Domain=PlugInKit Code=13 &quot;query cancelled&quot; 
+UserInfo={NSLocalizedDescription=query cancelled}</code></pre></div>
+
+<p>This is because the simulator doesn&#39;t have any cameras built in, as it&#39;s only simulating an iOS device on your computer! In order to test the camera functionality, you&#39;ll need to connect an actual iOS device to your computer.</p>
+
+<h2 id="toc_5">Part 4: Testing On a Device</h2>
+
+<p>Unfortunately, this is a bit harder than just plugging in a device and hoping for the best - physical iOS devices require apps to be code-signed, and there are a few extra steps to get that to work. You&#39;ll need to set up a (free) Apple Developer account, and properly configure a development certificate that has your device registered to it.</p>
+
+<p>Fortunately, Apple has drastically simplified this process over the past few years (it used to take hours!) - now most of it happens automatically. <strong>Follow <a href="https://codewithchris.com/deploy-your-app-on-an-iphone/">this guide</a> to get your account and certificate set up.</strong></p>
+
+<p>When you&#39;re ready to deploy and test your app, connect your iOS device to your computer with a cable, and unlock it. <strong>Make sure that <q>Automatically Manage Signing</q> is checked, and that <q>Team</q> is set to your account.</strong> The fist time you try to deploy to your device, Xcode might try to set it up for development. This can take a long while (up to 20 minutes), so don&#39;t disturb Xcode or unplug your device while this process is happening.</p>
+
+<p>Now that you&#39;ve successfully deployed your app to your device, you can test it with full functionality! The camera button should take you to a camera <q>view</q> where you can take (and confirm) a photo, and the photo library should use photos from your device.</p>
+
+<h2 id="toc_6">Part 5: Checkoff</h2>
+
+<p>Congrats on finishing this sampler lab - hopefully you have a idea now of how to implement camera functionality in your own app! As part of the checkoff, we&#39;ll want to see this lab running on your own device (to check the camera functionality), so feel free to pre-load the binary if you want to save a bit of time.</p>
+
+<p>As this lab is a sampler lab, you can check it off any time between when it is assigned and <strong>Tuesday, 4/30</strong>. Good luck with the rest of the sampler labs, and your final project!</p>
+
+<p><br></p>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/x-mathjax-config">
+(function () {
+
+MathJax.Hub.Config({
+	'showProcessingMessages': false,
+	'messageStyle': 'none'
+});
+
+if (typeof MathJaxListener !== 'undefined') {
+	MathJax.Hub.Register.StartupHook('End', function () {
+		MathJaxListener.invokeCallbackForKey_('End');
+	});
+}
+
+})();
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+</body>
+
+</html>
