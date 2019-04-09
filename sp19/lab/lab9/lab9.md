@@ -102,7 +102,7 @@ Essentially, we're defining an instance of our second view controller and pushin
 
 ## Part 5: Animate your Button!
 
-So far, we've been using the default UIButtons for all of our needs. However, just as we can customize properties of a UIButton like its fill, shape, and text, we can also override or extend properties like animation and presentation to provide a more interesting UI.
+So far, we've been using the default UIButtons for all of our needs. However, just as we can customize properties of a UIButton like its fill, shape, and text, we can also override or extend properties like animation and presentation to provide a more interesting UI. In this section, we'll add a slight pulsing effect to the button when you tap and hold onto it.
 
 We'll start by **creating an extension for the class UIButton in our ViewController.swift file and defining a function `pulse()`.** In this function, we'll first **declare a constant `pulse` and initialize it to a CASpringAnimation object with its `keyPath` parameter set to `"transform.scale"`.** There are many keyPaths available, from position to opacity. Next, **copy the following code into your `pulse()` function:**
 
@@ -129,7 +129,7 @@ We've completed the code to animate our UIButton, but to call our function, we m
 We'll call this function with another `#selector`. **Add the following line to `viewDidLoad()`:**
 
 ```swift
-nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchDown)
 ```
 
 If everything worked out properly, touching and holding over your button should make it bounce slightly!
