@@ -129,7 +129,7 @@ We've completed the code to animate our UIButton, but to call our function, we m
 We'll call this function with another `#selector`. **Add the following line to `viewDidLoad()`:**
 
 ```swift
-nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchDown)
+nextButton.addTarget(self, action: #selector(pulseButton(_:)), for: .touchDown)
 ```
 
 If everything worked out properly, touching and holding over your button should make it bounce slightly!

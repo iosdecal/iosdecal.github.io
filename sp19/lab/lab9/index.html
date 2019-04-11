@@ -384,7 +384,7 @@ layer.add(pulse, forKey:nil)</code></pre></div>
 
 <p>We&#39;ll call this function with another <code>#selector</code>. <strong>Add the following line to <code>viewDidLoad()</code>:</strong></p>
 
-<div><pre><code class="language-swift">nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchDown)</code></pre></div>
+<div><pre><code class="language-swift">nextButton.addTarget(self, action: #selector(pulseButton(_:)), for: .touchDown)</code></pre></div>
 
 <p>If everything worked out properly, touching and holding over your button should make it bounce slightly!</p>
 
