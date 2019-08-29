@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+<title>iOS DeCal</title>
+<meta http-equiv="Content-Type" content="text/html" ; charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" href="iphone-carousel/css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.min.js"></script> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Muli:400,700,900i" rel="stylesheet">
+<!-- Favicon linking  -->
+<link rel="shortcut icon" href="/favicons/favicon.ico">
+<link rel="icon" sizes="16x16 32x32 64x64" href="/favicons/favicon.ico">
+<link rel="icon" type="image/png" sizes="196x196" href="/favicons/favicon-192.png">
+<link rel="icon" type="image/png" sizes="160x160" href="/favicons/favicon-160.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/favicons/favicon-64.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16.png">
+<link rel="apple-touch-icon" href="/favicons/favicon-57.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/favicons/favicon-114.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/favicons/favicon-72.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/favicons/favicon-144.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/favicons/favicon-60.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/favicons/favicon-120.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/favicons/favicon-76.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/favicons/favicon-152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/favicon-180.png">
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="/favicons/favicon-144.png">
+<meta name="msapplication-config" content="/browserconfig.xml">
+<!-- GitHub -->
+<meta name="gc:client-id" content="61cc8636c6f8d67267be">
+<meta name="gc:client-secret" content="fbdff7bca1b568dd3f22ce3f3633bb432ab50d05">
+<!-- Preview Image (shows up in Facebook Posts) -->
+<!-- TODO: update this for new semester  -->
+<meta property="og:image" content="http://iosdecal.com/other_files/iosdecal_banner.jpg"/>
+<meta property="og:title" content="iOS DeCal"/>
+<meta property="og:url" content="iosdecal.com"/>
+<meta property="og:type" content="website"/>
+<!-- <meta property="og:description" content="Spring 2018 | Info Session January 18th!"/> -->
+<meta property="og:description" content="iOS DeCal | Spring 2018"/>
+</head>
+<body>
+<section id="title-container" class="main-container">
+  <div id="title" class="heading"> <img src="other_files/logo.jpg" alt="iOS DeCal" style="width:150px;height:150px;"> </div>
+  <div id="class-number" class="subheading">
+    <h1>cs 198 : Spring 2019</h1>
+  </div>
+  <div id="menu" class="menu-subheading menu-container"> <a href="#syllabus">syllabus</a> &emsp; <a href="#staff">staff</a> &emsp; <a href="https://piazza.com/berkeley/spring2019/cs198001/home">piazza</a> &emsp; <a href="#showcase">showcase</a> &emsp; <a href="#about">about</a> &emsp; </div>
+</section>
+<section id="overview-container" class="main-container container-fluid">
+
+  
+
+  <!--
+  <div id="how-to-apply" class="row" style="text-align:center;">
+        <h3>Applications due Fri 1/25, results by Sun 1/27!</h3>
+        Info Sessions: Tues 1/22 and Thurs 1/24 at 5PM
+    <form action="https://goo.gl/forms/0QUWI7uL3vwHPKvu1">
+      <button class="button" type="submit" formtarget="_blank">Apply for Spring 2019</button>
+    </form>
+  </div>
+  -->
+  <!--
+  <div id="how-to-apply" class="row" style="text-align:center;">
+        <h3>First lab is 5-7PM on Thurs 1/31</h3>
+        We'll be dividing up into lab groups for the semester, so be on time!
+  </div>
+  -->
+
+
+  <div id="how-to-apply" class="row" style="text-align:center;">
+        <h3>Thanks for an awesome semester!</h3>
+        We're continuously trying to make this course better, and we'd really appreciate your feedback!<br>
+        You can also apply to be a TA if you're interested in teaching the next generation of iOS developers :)<br>
+        <br>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScaX9hFU2rzHoGIuZ95xfUDbTm1gR0KeRiYHYwmXWioUpr2WQ/viewform?usp=sf_link" class="button">End-of-Semester Feedback</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScaMxtCc-_yi7YumYk1E5nDMQExpBtptTcEzh_y8CPn_xT6lQ/viewform?usp=sf_link" class="button">Apply to be a TA!</a>
+  </div>
+
+<br>
+<div id="syllabus" class="row">
+  <h2>Syllabus (Spring 2019)</h2>
+	<li>First class: Tuesday, 1/29 in 145 Moffit</li>
+  <table class="table-responsive">
+    <thead>
+      <tr>
+        <th>Week</th>
+        <th>Lecture (Tuesday)</th>
+        <th>Lab (Thursday)</th>
+        <th>Assignments</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>&emsp;Tues 1/29&emsp;<br>
+          Thurs 1/31</td>
+        <td><a href="https://docs.google.com/presentation/d/1taWBXXVxmm42_Z3nH2ydV5aRP9DfTcNmebgmArLkbrw/edit?usp=sharing">Introduction to Swift</a><br>
+        <a href="https://drive.google.com/uc?export=download&id=1vHYxrdpjvnYsQoWITVYhN5ruvjII0utR">(demo)</a>
+        </td>
+        <td><a href="sp19/lab/lab1/">lab1: Swift Playgrounds</a></td>
+        <td rowspan="2"></td>
+      </tr>
+	   
+      <tr>
+        <td>Tues 2/5<br>Thurs 2/7</td>
+        <td><a href="https://docs.google.com/presentation/d/1WAmio2gDW7CJtw0PQ6sjF6fZbOiYC7FyrjOB3h6DYJo/edit?usp=sharing">More Swift</a><br>
+        <a href="https://drive.google.com/uc?export=download&id=1_yY2opJb80y0Npn8qExghjgbFzTLAmG8">(demo)</a></td>
+        <td><a href="sp19/lab/lab2/">lab2: Workplace</a></td></td>
+      </tr>
+	  
+      <tr>
+        <td>Tues 2/12<br>Thurs 2/14</td>
+        <td><a href="https://drive.google.com/file/d/1k4KdOmQMIs5JSBBO-soHoWf_f1JPZluo/view?usp=sharing">Storyboard + AutoLayout + MVC</a><br>
+        <a href="https://drive.google.com/uc?export=download&id=15aaoV5ekmYcegMVVDQtfAz0b-xsYYkP6">(demo)</a></td>
+        <td><a href="sp19/lab/lab3/">lab3: Drummer</a></td>
+        <td rowspan="2"><a href="sp19/proj/proj1/">proj1: Hangman</a></td>
+      </tr>
+	    
+      <tr>
+        <td>Tues 2/19<br>Thurs 2/21</td>
+        <td><a href="https://docs.google.com/presentation/d/1xBy2H8ES3XmGyPPiGpkk3lfzJwFY0ctK-8NtJer_Nn0/edit?usp=sharing">Multiview Apps</a><br>
+          <a href="https://drive.google.com/uc?export=download&id=1nFfdeV5Duti9Z5o2XGRNfMVYO8d7wUz0">(demo)</a></td>
+        <td><a href="sp19/lab/lab4/">lab4: ImagePicker</a></td>
+      </tr>
+	    
+      <tr>
+        <td>Tues 2/26<br>Thurs 2/28</td>
+      	<td><a href="https://docs.google.com/presentation/d/1hOGHJxsotfyoVNLhyMZWDmo0oTZPB_W2Ck9u2IosjuY/edit?usp=sharing">TableViews/CollectionViews</a> <br><a href="https://drive.google.com/uc?export=download&id=1TF9KyCS50aSMDXtDsc41Rf2isx5qCyIY">(assets)</a> <a href="https://drive.google.com/uc?export=download&id=15rbS4RWBcYS8nJ8JT2EfD5cn-BtE4rF_">(demo)</a></td>
+        <td><a href="sp19/lab/lab5/">lab5: Snapchat Navigation</a></td>
+        <td rowspan="2"><a href="sp19/proj/proj2/">proj2: Snapchat 1<br>(Functionality)</a></td>
+      </tr>
+	    
+      <tr>
+        <td>Tues 3/5<br>Thurs 3/7</td>
+        <td><a href="https://docs.google.com/presentation/d/1gT28QuSAG5KjMnt9YQv2Ew_K7Yu609WAC4vmctlJOXI/edit?usp=sharing">Gestures + Networking</a><br>
+	      <a href="https://drive.google.com/uc?export=download&id=1BbJbci3vqfm5rvZS7zEpXKALPHprXzuZ">(demo)</a></td>
+        <td><a href="sp19/lab/lab6/">lab6: Cryptocurrency Ticker</a></td>
+      </tr>
+	    
+      <tr>
+        <td>Tues 3/12<br>Thurs 3/14</td>
+        <td><a href="https://docs.google.com/presentation/d/1fBjNcpxB84q9O3T5p3TFSUFd5ihQJpRGwCB88SAOr1A/edit?usp=sharing">Swift Libraries + Firebase</a><br>
+        <a href="https://drive.google.com/uc?export=download&id=1WwHL8xTKl4NRfs5TuXuObf2xmwV7Ludd">(demo)</a></td>
+        <td><a href="sp19/lab/lab7/">lab7: Snapchat Networking</a></td>
+        <td rowspan="2"><a href="sp19/finalproj/">Final Project Assigned</a></td>
+      </tr>
+
+      <tr>
+        <td>Tues 3/19<br>Thurs 3/21</td>
+        <td><a href="https://docs.google.com/presentation/d/1jYIEUw32qZ9cZwsL5so2k7UoxMgIwDrwqIpuO846lwc/edit?usp=sharing">AVFoundation + LocationKit/MapKit</a><br><a href="https://drive.google.com/uc?export=download&id=1QenK1sZ12pIfuXlIgwTnqIe81jY9Ppsa">(MapKit demo)</a></td>
+        <td>Final Project Checkoffs<br><a href="sp19/lab/lab8/">lab8: Camera Sampler</a></td>
+      </tr>
+
+      <tr>
+        <td>Tues 3/26<br>Thurs 3/28</td>
+        <td><i>Spring Break</i></td>
+        <td><i>Spring Break</i></td>
+        <td rowspan="6">Final Project</td>
+      </tr>
+
+      <tr>
+        <td>Tues 4/2<br>Thurs 4/4</td>
+        <td><a href="https://docs.google.com/presentation/d/1J0n8Ud3tWEnP6e9Y05X7PSj6w6xcNAdZ2Jeb5e1qGpo/edit?usp=sharing">Programmatic Design + Wireframing</a><br><small>Guest Lecturer: Nik</small><br><a href="https://drive.google.com/file/d/1gad-7LdjiBx-zILzrtbReu2IPayR4uqs/view?usp=sharing">(Figma demo)</a> <a href="https://drive.google.com/uc?export=download&id=14B83nu581EAIIb__Uw2qrZGm30J2Ia4V">(demo)</a></td>
+        <td><a href="sp19/lab/lab9/">lab9: Programmatic Design Sampler</a></td>
+      </tr>
+
+      <tr>
+        <td>Tues 4/9<br>Thurs 4/11</td>
+        <td><a href="https://docs.google.com/presentation/d/1RqLTSV22hFUg5Kk9mcZ6SYjl3YRtQtjB0dkKsQx6_Jk/edit?usp=sharing">Data Persistence</a><br><a href="https://drive.google.com/uc?export=download&id=1XtMPaZUX4qPHolfBIgaekwb4KyjziTKc">(demo)</a></td>
+        <td><a href="sp19/lab/lab10/">lab10: Data Persistence Sampler</a></td>
+      </tr>
+
+      <tr>
+        <td>Tues 4/16<br>Thurs 4/18</td>
+        <td><a href="https://docs.google.com/presentation/d/1xtmJu-F-xwhDS51sFBilfQlSff2j76DM4W_0y4fwwzk/edit?usp=sharing">ARKit + CoreML</a><br><a href="https://drive.google.com/uc?export=download&id=1AwSTmZD_Tp6IkYLGwt2MN9Z-lix2JIt0">(ARKit demo)</a> <a href="https://drive.google.com/uc?export=download&id=18fSzXWKR25jFImnfnYF_ea415XPCGcPL">(CoreML demo)</a></td>
+        <td><a href="sp19/lab/lab11/">lab11: CoreML Sampler</a></td>
+      </tr>
+
+      <tr>
+        <td>Tues 4/23<br>Thurs 4/25</td>
+        <td><a href="https://docs.google.com/presentation/d/1ihRVP3O7QF48S-CQLUzofyAxgYsfSTSnck-QFhQavmo/edit?usp=sharing">Advanced Swift + Objective-C</a><br><a href="https://drive.google.com/uc?export=download&id=1o5coM1fZSHZU0JccHwqQ2DUoiVWg3pk2">(demo)</a></td>
+        <td><a href="sp19/lab/lab12/">lab12: Objective-C Sampler</a></td>
+      </tr>
+
+      <tr>
+        <td>Tues 4/30<br>Thurs 5/2</td>
+        <td><a href="https://docs.google.com/presentation/d/1aXZkckcFFeP4cNpiNx8qXeCgPodPVyMAtE1ecxvYIPM/edit?usp=sharing">Miscellaneous Topics</a></td>
+        <td>Final Project Work Day</td>
+      </tr>
+
+      <tr>
+        <td>Tues 5/7<br>Thurs 5/9</td>
+        <td><i>RRR Week</i></td>
+        <td><i>RRR Week</i></td>
+        <td rowspan="1">Final Project Showcase<br>(attendance mandatory!)</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</div>
+<div id="staff" class="container-fluid">
+  <div class="subheading">
+    <h2>Course Staff</h2>  
+  </div>
+  <small>(Contact course staff by making a private post on <a href="https://piazza.com/class/jrbay81cs73s4">Piazza</a>)</small>
+  <h3>Facilitators</h3>
+  <div class="staff-container">
+    <div class="row">
+      <div class="staff-grid "> <img src="staff-photos/rj_pimentel.jpg" alt="RJ Pimentel">
+        <div class="description">RJ Pimentel<br></div>
+      </div>
+      <div class="staff-grid "> <img src="staff-photos/david_xiong.jpg" alt="David Xiong">
+          <div class="description">David Xiong<br></div>
+        </div>
+    </div>
+  </div>
+
+  <div class="staff-subheading">
+    <h3>Teaching Assistants</h3>
+    <div class="staff-container">
+      <div class="row">
+        <div class="staff-grid "> <img src="staff-photos/stephen_boyle.jpg" alt="Stephen Boyle">
+          <div class="description">Stephen Boyle</div>
+        </div>
+        <div class="staff-grid "> <img src="staff-photos/sunbin_kim.jpg" alt="Sunbin Kim">
+          <div class="description">Sunbin Kim</div>
+        </div>
+        <div class="staff-grid "> <img src="staff-photos/matthew_lam.jpg" alt="Matthew Lam">
+          <div class="description">Matthew Lam</div>
+        </div>
+        <div class="staff-grid "> <img src="staff-photos/thuan_phung.jpg" alt="Thuan Phung">
+          <div class="description">Thuan Phung</div>
+        </div>
+        <div class="staff-grid "> <img src="staff-photos/nikhil_yerasi.jpg" alt="Nikhil Yerasi">
+          <div class="description">Nikhil Yerasi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End staff (total) --> 
+</section>
+<section id="showcase" class="text-center">
+	<h4>Showcase</h4>
+	<div id="app"></div>
+	<div class="github-card" data-user="erikyangs" data-repo="ios-decal-final-project" data-target="blank" data-width="400"></div>
+	<script src="iphone-carousel/js/widget.js"></script>
+	<div id="appstore-card" style="display: none;">
+		<iframe id="appstore-card-iframe" src="https://banners.itunes.apple.com/banner.html?partnerId=&aId=&bt=catalog&t=catalog_white&id=1313661888&c=us&l=en-US&w=300&h=250&store=apps" frameborder="0" style="overflow-x:hidden;overflow-y:hidden;width:300px;height:250px;border:0px">
+		</iframe>
+	</div>
+	<script src="iphone-carousel/js/index.js"></script>
+</section>
+<section class="main-container container-fluid">
+<!-- About -->
+<div id="about" class="row">
+  <h2>About</h2>
+  <h3>Time/ Location</h3>
+  Each week, we will have one lecture and one lab, with attendance being required for both.<br>
+  <ul style="list-style-type:disc">
+    <li><strong>Lecture:</strong> Tuesdays, 5-6pm in 145 Moffitt</li>
+    <li><strong>Office Hours:</strong> Tuesdays, 6-7pm in 145 Moffitt <small>(following lecture)</small></li>
+    <li><strong>Lab:</strong> Thursdays, 5-7pm in 145 Moffitt</li>
+  </ul>
+  <h3>Course Description</h3>
+  The iOS DeCal was started by Professor Dan Garcia (now our Faculty Advisor) in <span id="dan-from-the-future"> </span>as MS-DOS X, a student-run Objective-C course for OS X (and later iOS) development. Rebooted in the Fall 2015 semester, the renamed iOS DeCal now operates with the latest devices (e.g. iPhone, iPad, Apple Watch, Apple TV). By the end of the semester, students will have created a variety of apps, including one entirely of their own design. </div>
+<div id="grading" class="row">
+  <h2>Grading</h2>
+  Labs: 1pt each (8pts total) <br/>
+  Assignments: 4pts each (12pts total) <br/>
+  Custom App: 10pts <br/><br>
+  <i>Total: 30 pts (21pts needed to pass)</i>
+  <br/>
+</div>
+<div id="info" class="row">
+  <h2>Prerequisites/ Requirements</h2>
+  <ul style="list-style-type:disc">
+    <li><b>Courses: </b>CS 61A and CS 61B, or equivalent courses (we will be assuming that students are familiar with object-oriented programming)</li>
+    <li><b>Hardware: </b>MacBook running macOS 10.13.6 or later</li>
+  </ul>
+</div>
+<div id="staff" class="row">
+  <div class="subheading">
+    <h2>Course Advisor</h2>
+  </div>
+  <div class="former-container container-fluid">
+    <div class="row">
+      <div class="former-grid "> <img src="staff-photos/dan_garcia.jpg" onmouseover="this.src='staff-photos/dan_garcia_eyebrow.jpg'" onmouseout="this.src='staff-photos/dan_garcia.jpg'" alt="Dan Garcia" id="">
+        <div class="former-grid-name"><a href="https://people.eecs.berkeley.edu/~ddgarcia/">Dan Garcia</a></div>
+        <div class="former-grid-semester">2001 - current</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="staff" class="row">
+  <div class="subheading">
+    <h2>Former Facilitators</h2>
+  </div>
+  <div class="former-container container-fluid">
+    <div class="row">
+
+      <div class="former-grid "> <img src="past-staff-photos/nithi.jpg" alt="Nithi Narayanan">
+        <div class="description">Nithi Narayanan</div>
+        <div class="former-grid-semester">spring 2018, fall 2018</div>
+      </div>
+      <div class="former-grid "> <img src="past-staff-photos/daniel.jpg" alt="Daniel Phiri">
+        <div class="former-grid-name"><a href="https://www.linkedin.com/in/danielphiri/">Daniel Phiri</a></div>
+        <div class="former-grid-semester">spring 2018</div>
+      </div>
+      <div class="former-grid "> <img src="past-staff-photos/chris.jpg" alt="Chris Zielinski">
+        <div class="former-grid-name">Chris Zielinski</div>
+        <div class="former-grid-semester">fall 2017, spring 2018</div>
+      </div>
+      <div class="former-grid "> <img src="past-staff-photos/paige.jpg" alt="Paige Plander">
+        <div class="former-grid-name"><a href="https://www.linkedin.com/in/paigeplander">Paige Plander</a></div>
+        <div class="former-grid-semester"><small>spring 17, fall 17, spring 18</small></div>
+      </div>
+      <div class="former-grid "> <img src="past-staff-photos/akilesh.jpg" alt="Akilesh Bapu">
+        <div class="former-grid-name"><a href="https://www.linkedin.com/in/akileshbapu">Akilesh Bapu</a></div>
+        <div class="former-grid-semester">spring 2017</div>
+      </div>
+      <div class="former-grid "> <img src="past-staff-photos/kuriakose.jpg" alt="Kuriakose (Sony) Theakanath">
+        <div class="former-grid-name"><a href="https://www.linkedin.com/in/stheakanath">Sony Theakanath</a></div>
+        <div class="former-grid-semester">fall 2016</div>
+      </div>
+      <div class="former-grid "> <img src="past-staff-photos/lucy.jpg" alt="Lucy Xiao">
+        <div class="former-grid-name"><a href="https://www.linkedin.com/in/lucygxiao">Lucy Xiao</a></div>
+        <div class="former-grid-semester">fall 2016</div>
+      </div>
+      <div class="former-grid "> <img src="past-staff-photos/gene.jpg" alt="Gene Yoo">
+        <div class="former-grid-name"><a href="https://www.linkedin.com/in/geneyoois">Gene Yoo</a></div>
+        <div class="former-grid-semester">fall 2015, spring 2016</div>
+      </div>
+      <div class="former-grid "> <img src="past-staff-photos/shawn.jpg" alt="Shawn D'Souza">
+        <div class="former-grid-name"><a href="https://www.linkedin.com/in/shawnpdsouza">Shawn D'Souza</a></div>
+        <div class="former-grid-semester">fall 2015, spring 2016</div>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br>
+<a href="https://www.ocf.berkeley.edu">
+    <img src="https://www.ocf.berkeley.edu/hosting-logos/ocf-hosted-penguin-dark.svg"
+        alt="Hosted by the OCF" style="border: 0;" />
+</a><br>
+
+</section>
+</body>
+</html>
